@@ -89,7 +89,18 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 #nav .container {
   display: flex; align-items: center; justify-content: space-between; width: 100%;
 }
-.nav-logo img { height: 32px; }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo .logo-mark {
+  width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-lt) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 900; color: #fff; letter-spacing: -.02em;
+}
+.nav-logo .logo-name {
+  font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -.01em;
+  line-height: 1.2;
+}
+.nav-logo .logo-name span { color: var(--lime); }
 .nav-links {
   display: flex; align-items: center; gap: 32px; list-style: none;
 }
@@ -280,7 +291,7 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 
 /* ── Videos ───────────────────────────────────────── */
 .videos-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .video-card {
@@ -290,7 +301,6 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 .video-card iframe {
   width: 100%; aspect-ratio: 16/9; display: block; border: none;
 }
-.video-card.short iframe { aspect-ratio: 9/16; max-height: 480px; }
 
 /* ── Testimonials ─────────────────────────────────── */
 .testimonials-grid {
@@ -433,6 +443,33 @@ footer {
   background: none; color: var(--text); font-size: 28px;
 }
 
+/* ── Scroll animations ────────────────────────────── */
+[data-animate] {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+}
+[data-animate].visible { opacity: 1; transform: translateY(0); }
+[data-animate][data-delay="1"] { transition-delay: .1s; }
+[data-animate][data-delay="2"] { transition-delay: .2s; }
+[data-animate][data-delay="3"] { transition-delay: .3s; }
+[data-animate][data-delay="4"] { transition-delay: .4s; }
+
+/* ── Mobile horizontal scroll wrapper ────────────── */
+.scroll-wrapper { position: relative; }
+.scroll-arrows {
+  display: none; justify-content: flex-end; gap: 8px; margin-bottom: 14px;
+}
+.scroll-arrow {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--text); font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s, border-color .2s;
+  user-select: none;
+}
+.scroll-arrow:hover { background: var(--surface); border-color: var(--purple); }
+.scroll-arrow:disabled { opacity: .3; pointer-events: none; }
+
 /* ── Responsive ───────────────────────────────────── */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -440,6 +477,7 @@ footer {
   #about .about-inner { grid-template-columns: 1fr; gap: 40px; }
   .about-img-wrap { max-width: 420px; }
   .about-badge { right: 8px; }
+  .videos-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .nav-links, .nav-cta .btn-outline { display: none; }
@@ -448,10 +486,37 @@ footer {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .hero-stats { gap: 24px; }
   .tab-bar { border-radius: var(--radius); }
-  .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .scroll-arrows { display: flex; }
+
+  /* portfolio grids become horizontal scrollers on mobile */
+  .portfolio-grid {
+    display: flex; flex-direction: row;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 12px; padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .portfolio-grid::-webkit-scrollbar { display: none; }
+  .portfolio-grid .portfolio-item {
+    flex: 0 0 72vw; max-width: 300px;
+    scroll-snap-align: start;
+  }
+
+  /* creatives grid horizontal on mobile */
+  .creatives-grid {
+    display: flex; flex-direction: row;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 10px; padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .creatives-grid::-webkit-scrollbar { display: none; }
+  .creatives-grid .creative-item {
+    flex: 0 0 44vw; max-width: 200px;
+    scroll-snap-align: start;
+  }
 }
 @media (max-width: 480px) {
-  .creatives-grid { grid-template-columns: repeat(2, 1fr); }
   #lightbox-prev { left: 8px; }
   #lightbox-next { right: 8px; }
 }
@@ -463,7 +528,8 @@ footer {
 <nav id="nav">
   <div class="container">
     <a class="nav-logo" href="#hero">
-      <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Logo.svg" alt="Mrinmoy Sadiq" />
+      <div class="logo-mark">MS</div>
+      <div class="logo-name">Mrinmoy <span>Sadiq</span></div>
     </a>
     <ul class="nav-links">
       <li><a href="#campaigns">Ad Campaigns</a></li>
@@ -504,9 +570,7 @@ footer {
           Top-Rated on Upwork · 5+ Years Experience
         </div>
         <h1 class="hero-title">
-          Paid Ads, Funnels &<br />
-          <span class="accent">GoHighLevel</span><br />
-          Done For You.
+          Paid Ads, Funnels &amp; <span class="accent">GoHighLevel</span> —<br />Done For You.
         </h1>
         <p class="hero-desc">
           I help agencies &amp; service businesses build complete client acquisition systems — combining paid ads, high-converting funnels, and GoHighLevel automations into one seamless done-for-you system.
@@ -574,9 +638,9 @@ footer {
 <!-- ── AD CAMPAIGN RESULTS ── -->
 <section id="campaigns" class="section">
   <div class="container">
-    <div class="section-label">Ad Campaign Results</div>
-    <h2 class="section-title">Verified Campaign Screenshots</h2>
-    <p class="section-sub">Real results from Facebook Ads, Google Ads, and GoHighLevel integrations. Every screenshot is from an actual client campaign.</p>
+    <div class="section-label" data-animate>Ad Campaign Results</div>
+    <h2 class="section-title" data-animate data-delay="1">Verified Campaign Screenshots</h2>
+    <p class="section-sub" data-animate data-delay="2">Real results from Facebook Ads, Google Ads, and GoHighLevel integrations. Every screenshot is from an actual client campaign.</p>
 
     <div style="margin-top: 40px;">
       <div class="tab-bar">
@@ -587,7 +651,12 @@ footer {
 
       <!-- Facebook Ads -->
       <div class="tab-pane active" id="tab-fb">
-        <div class="portfolio-grid" data-gallery="fb">
+        <div class="scroll-wrapper">
+        <div class="scroll-arrows">
+          <button class="scroll-arrow" onclick="scrollGallery('grid-fb',-1)">&#8592;</button>
+          <button class="scroll-arrow" onclick="scrollGallery('grid-fb', 1)">&#8594;</button>
+        </div>
+        <div class="portfolio-grid" id="grid-fb" data-gallery="fb">
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Facebook_Ads_for_Remodeling_Company-1024x593.png" data-caption="Facebook Ads – Remodeling Company">
             <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Facebook_Ads_for_Remodeling_Company-1024x593.png" alt="Facebook Ads Remodeling Company" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Remodeling Company</span></div>
@@ -629,11 +698,17 @@ footer {
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
         </div>
+        </div><!-- /scroll-wrapper -->
       </div>
 
       <!-- Google Ads -->
       <div class="tab-pane" id="tab-google">
-        <div class="portfolio-grid" data-gallery="google">
+        <div class="scroll-wrapper">
+        <div class="scroll-arrows">
+          <button class="scroll-arrow" onclick="scrollGallery('grid-google',-1)">&#8592;</button>
+          <button class="scroll-arrow" onclick="scrollGallery('grid-google', 1)">&#8594;</button>
+        </div>
+        <div class="portfolio-grid" id="grid-google" data-gallery="google">
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_KitchenBathroom_Remodeling.png" data-caption="Google Ads – Kitchen & Bathroom Remodeling">
             <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_KitchenBathroom_Remodeling.png" alt="Google Ads Kitchen Bathroom" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Kitchen & Bathroom Remodeling</span></div>
@@ -680,11 +755,17 @@ footer {
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
         </div>
+        </div><!-- /scroll-wrapper -->
       </div>
 
       <!-- GoHighLevel -->
       <div class="tab-pane" id="tab-ghl">
-        <div class="portfolio-grid" data-gallery="ghl">
+        <div class="scroll-wrapper">
+        <div class="scroll-arrows">
+          <button class="scroll-arrow" onclick="scrollGallery('grid-ghl',-1)">&#8592;</button>
+          <button class="scroll-arrow" onclick="scrollGallery('grid-ghl', 1)">&#8594;</button>
+        </div>
+        <div class="portfolio-grid" id="grid-ghl" data-gallery="ghl">
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel-Automation-Lead-to-Appointment-1024x853.png" data-caption="GHL – Lead to Appointment Automation">
             <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel-Automation-Lead-to-Appointment-1024x853.png" alt="GHL Automation" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Lead to Appointment Automation</span></div>
@@ -721,6 +802,7 @@ footer {
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
         </div>
+        </div><!-- /scroll-wrapper -->
       </div>
     </div>
   </div>
@@ -729,11 +811,16 @@ footer {
 <!-- ── LANDING PAGES & FUNNELS ── -->
 <section id="funnels" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="container">
-    <div class="section-label">Landing Pages & Funnels</div>
-    <h2 class="section-title">High-Converting Funnels</h2>
-    <p class="section-sub">Funnels designed &amp; optimized inside GHL, WordPress, Systeme.io, Unbounce, and ClickFunnels. Built to convert traffic into booked calls.</p>
+    <div class="section-label" data-animate>Landing Pages & Funnels</div>
+    <h2 class="section-title" data-animate data-delay="1">High-Converting Funnels</h2>
+    <p class="section-sub" data-animate data-delay="2">Funnels designed &amp; optimized inside GHL, WordPress, Systeme.io, Unbounce, and ClickFunnels. Built to convert traffic into booked calls.</p>
 
-    <div class="portfolio-grid" style="margin-top: 40px;" data-gallery="funnels">
+    <div class="scroll-wrapper" style="margin-top: 40px;">
+    <div class="scroll-arrows">
+      <button class="scroll-arrow" onclick="scrollGallery('grid-funnels',-1)">&#8592;</button>
+      <button class="scroll-arrow" onclick="scrollGallery('grid-funnels', 1)">&#8594;</button>
+    </div>
+    <div class="portfolio-grid" id="grid-funnels" data-gallery="funnels">
       <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Krown-Thereapy-Landing-Page-Thumbnail.png" data-caption="Krown Therapy – Landing Page">
         <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Krown-Thereapy-Landing-Page-Thumbnail.png" alt="Therapy Clinic Landing Page" loading="lazy" />
         <div class="overlay"><span class="overlay-label">Krown Therapy Clinic</span></div>
@@ -815,17 +902,23 @@ footer {
         <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
       </div>
     </div>
+    </div><!-- /scroll-wrapper -->
   </div>
 </section>
 
 <!-- ── AD CREATIVES ── -->
 <section id="creatives" class="section">
   <div class="container">
-    <div class="section-label">Ad Creatives</div>
-    <h2 class="section-title">Creatives That Convert</h2>
-    <p class="section-sub">Copy, visuals, and hooks tailored to each niche and buyer persona.</p>
+    <div class="section-label" data-animate>Ad Creatives</div>
+    <h2 class="section-title" data-animate data-delay="1">Creatives That Convert</h2>
+    <p class="section-sub" data-animate data-delay="2">Copy, visuals, and hooks tailored to each niche and buyer persona.</p>
 
-    <div class="creatives-grid" style="margin-top: 40px;" data-gallery="creatives">
+    <div class="scroll-wrapper" style="margin-top: 40px;">
+    <div class="scroll-arrows">
+      <button class="scroll-arrow" onclick="scrollGallery('grid-creatives',-1)">&#8592;</button>
+      <button class="scroll-arrow" onclick="scrollGallery('grid-creatives', 1)">&#8594;</button>
+    </div>
+    <div class="creatives-grid" id="grid-creatives" data-gallery="creatives">
       <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/AC_1.png" data-caption="Ad Creative 1">
         <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/AC_1.png" alt="Ad Creative 1" loading="lazy" />
       </div>
@@ -890,14 +983,15 @@ footer {
         <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Before-After-1024x784.png" alt="Before After Creative" loading="lazy" />
       </div>
     </div>
+    </div><!-- /scroll-wrapper -->
   </div>
 </section>
 
 <!-- ── VIDEOS ── -->
 <section id="videos" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
   <div class="container">
-    <div class="section-label">Video Walkthroughs</div>
-    <h2 class="section-title">Watch the Work in Action</h2>
+    <div class="section-label" data-animate>Video Walkthroughs</div>
+    <h2 class="section-title" data-animate data-delay="1">Watch the Work in Action</h2>
     <p class="section-sub">Campaign breakdowns, funnel walkthroughs, and GoHighLevel tutorials from real client projects.</p>
 
     <div class="videos-grid" style="margin-top: 40px;">
@@ -917,7 +1011,7 @@ footer {
           allowfullscreen loading="lazy">
         </iframe>
       </div>
-      <div class="video-card short">
+      <div class="video-card">
         <iframe
           src="https://www.youtube.com/embed/rAwUN5JaRxM"
           title="Short Clip"
@@ -932,8 +1026,8 @@ footer {
 <!-- ── TESTIMONIALS ── -->
 <section id="testimonials" class="section">
   <div class="container">
-    <div class="section-label">Testimonials</div>
-    <h2 class="section-title">What My Clients Say</h2>
+    <div class="section-label" data-animate>Testimonials</div>
+    <h2 class="section-title" data-animate data-delay="1">What My Clients Say</h2>
     <p class="section-sub">Unfiltered, unscripted feedback from agencies and service business founders I've partnered with.</p>
 
     <div class="testimonials-grid" style="margin-top: 48px;">
@@ -1204,6 +1298,52 @@ document.getElementById('lightbox').addEventListener('touchend', e => {
   const dx = e.changedTouches[0].screenX - touchStartX;
   if (Math.abs(dx) > 50) lightboxNav(dx < 0 ? 1 : -1);
 }, { passive: true });
+
+// ── Scroll gallery (mobile arrows) ──────────────────
+function scrollGallery(id, dir) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const itemW = el.firstElementChild ? el.firstElementChild.offsetWidth + 12 : 280;
+  el.scrollBy({ left: dir * itemW * 2, behavior: 'smooth' });
+}
+
+// ── Scroll animations (Intersection Observer) ───────
+(function() {
+  const els = document.querySelectorAll('[data-animate]');
+  if (!els.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(el => observer.observe(el));
+})();
+
+// Also animate testimonial cards and video cards on scroll
+(function() {
+  const cards = document.querySelectorAll('.testimonial-card, .video-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, (entry.target.dataset.idx || 0) * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(28px)';
+    card.style.transition = 'opacity .55s cubic-bezier(.16,1,.3,1), transform .55s cubic-bezier(.16,1,.3,1)';
+    card.dataset.idx = i % 4;
+    observer.observe(card);
+  });
+})();
 </script>
 </body>
 </html>
