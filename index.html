@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mrinmoy Sadiq | Media Buyer & GHL Expert</title>
+<meta name="description" content="I help agencies & service businesses with Paid Ads, Funnel, GoHighLevel & Ad Contents. A Complete Done-For-You System." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+/* ── Reset & base ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #07090f;
+  --surface:   #0d1020;
+  --card:      #111526;
+  --border:    #1e2440;
+  --purple:    #6c4ef2;
+  --purple-lt: #8b6ff7;
+  --lime:      #b6ef45;
+  --lime-dk:   #9fd936;
+  --text:      #e8eaf6;
+  --muted:     #7c84a8;
+  --radius:    12px;
+  --nav-h:     70px;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+
+/* ── Utility ──────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--lime);
+  background: rgba(182,239,69,.1); border: 1px solid rgba(182,239,69,.25);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 16px;
+}
+.section-label::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--lime); flex-shrink:0; }
+.section-title {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 800;
+  letter-spacing: -.02em; line-height: 1.15; margin-bottom: 16px;
+}
+.section-sub {
+  font-size: clamp(15px, 1.8vw, 17px); color: var(--muted);
+  max-width: 600px; line-height: 1.7;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 600; padding: 14px 28px;
+  border-radius: 100px; transition: all .2s;
+}
+.btn-primary {
+  background: var(--lime); color: #060810;
+}
+.btn-primary:hover { background: var(--lime-dk); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(182,239,69,.3); }
+.btn-outline {
+  background: transparent; color: var(--text);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover { border-color: var(--muted); background: rgba(255,255,255,.04); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* ── Navbar ───────────────────────────────────────── */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: var(--nav-h);
+  display: flex; align-items: center;
+  background: rgba(7,9,15,.0); backdrop-filter: blur(0px);
+  transition: background .3s, backdrop-filter .3s, box-shadow .3s;
+}
+#nav.scrolled {
+  background: rgba(7,9,15,.92); backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 var(--border);
+}
+#nav .container {
+  display: flex; align-items: center; justify-content: space-between; width: 100%;
+}
+.nav-logo img { height: 32px; }
+.nav-links {
+  display: flex; align-items: center; gap: 32px; list-style: none;
+}
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--muted);
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+#hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; padding: 4px;
+}
+#hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+
+/* ── Hero ─────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: var(--nav-h);
+  position: relative;
+  overflow: hidden;
+}
+.hero-glow {
+  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 900px; height: 700px;
+  background: radial-gradient(ellipse at 50% 30%, rgba(108,78,242,.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+  align-items: center; padding: 80px 0;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 28px;
+}
+.hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+.hero-title {
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900; letter-spacing: -.03em; line-height: 1.1;
+  margin-bottom: 24px;
+}
+.hero-title .accent {
+  background: linear-gradient(135deg, var(--purple-lt) 0%, var(--lime) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 17px; color: var(--muted); line-height: 1.75;
+  margin-bottom: 36px; max-width: 480px;
+}
+.hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.hero-stats {
+  display: flex; gap: 36px; margin-top: 48px; padding-top: 36px;
+  border-top: 1px solid var(--border); flex-wrap: wrap;
+}
+.hero-stat {}
+.hero-stat .num {
+  font-size: 28px; font-weight: 800; letter-spacing: -.02em; color: var(--text);
+}
+.hero-stat .lbl { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.hero-visual {
+  position: relative; display: flex; justify-content: center;
+}
+.hero-img-wrap {
+  position: relative; border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 100px rgba(0,0,0,.5), 0 0 0 1px rgba(108,78,242,.15);
+}
+.hero-img-wrap img { width: 100%; border-radius: 20px; }
+.hero-badge-float {
+  position: absolute; bottom: -18px; left: -18px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4);
+}
+.hero-badge-float .icon { font-size: 28px; line-height: 1; }
+.hero-badge-float .info .top { font-size: 13px; font-weight: 700; color: var(--text); }
+.hero-badge-float .info .bot { font-size: 11px; color: var(--muted); }
+
+/* ── Marquee (clients) ────────────────────────────── */
+#clients {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex; gap: 56px; align-items: center;
+  animation: marquee 28s linear infinite; width: max-content;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track img { height: 36px; width: auto; opacity: .55; filter: grayscale(1) brightness(2); transition: opacity .2s, filter .2s; }
+.marquee-track img:hover { opacity: 1; filter: none; }
+
+/* ── Campaign results ─────────────────────────────── */
+.tab-bar {
+  display: flex; gap: 4px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; padding: 4px; width: fit-content;
+  margin-bottom: 40px; flex-wrap: wrap;
+}
+.tab-btn {
+  font-size: 14px; font-weight: 600; padding: 10px 22px;
+  border-radius: 100px; background: transparent; color: var(--muted);
+  transition: all .2s;
+}
+.tab-btn.active {
+  background: var(--card); color: var(--text);
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
+}
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ── Portfolio grid (images) ──────────────────────── */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.portfolio-item {
+  position: relative; border-radius: var(--radius);
+  overflow: hidden; background: var(--surface);
+  border: 1px solid var(--border); cursor: pointer;
+  group: true;
+  transition: transform .25s, box-shadow .25s;
+}
+.portfolio-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  border-color: rgba(108,78,242,.4);
+}
+.portfolio-item img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  transition: transform .4s;
+}
+.portfolio-item:hover img { transform: scale(1.03); }
+.portfolio-item .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 50%);
+  opacity: 0; transition: opacity .25s; display: flex; align-items: flex-end;
+  padding: 16px;
+}
+.portfolio-item:hover .overlay { opacity: 1; }
+.overlay-label {
+  font-size: 13px; font-weight: 600; color: #fff;
+}
+.overlay-icon {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 48px; height: 48px; background: rgba(255,255,255,.15);
+  backdrop-filter: blur(8px); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .25s;
+}
+.portfolio-item:hover .overlay-icon { opacity: 1; }
+.overlay-icon svg { width: 22px; height: 22px; fill: #fff; }
+
+/* tall images (portrait funnels) */
+.portfolio-item.tall img { aspect-ratio: 3/4; object-fit: cover; }
+
+/* ── Ad Creatives grid ────────────────────────────── */
+.creatives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.creative-item {
+  border-radius: var(--radius); overflow: hidden; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border);
+  transition: transform .25s, box-shadow .25s;
+}
+.creative-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  border-color: rgba(108,78,242,.4);
+}
+.creative-item img {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  transition: transform .4s;
+}
+.creative-item:hover img { transform: scale(1.05); }
+
+/* ── Videos ───────────────────────────────────────── */
+.videos-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+.video-card {
+  border-radius: var(--radius); overflow: hidden;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.video-card iframe {
+  width: 100%; aspect-ratio: 16/9; display: block; border: none;
+}
+.video-card.short iframe { aspect-ratio: 9/16; max-height: 480px; }
+
+/* ── Testimonials ─────────────────────────────────── */
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px; align-items: start;
+}
+.testimonial-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.testimonial-card:hover {
+  border-color: rgba(108,78,242,.4);
+  box-shadow: 0 8px 40px rgba(108,78,242,.08);
+}
+.stars { display: flex; gap: 3px; margin-bottom: 16px; }
+.stars span { color: #f59e0b; font-size: 15px; }
+.testimonial-text {
+  font-size: 15px; line-height: 1.75; color: #c8cce0;
+  margin-bottom: 24px;
+}
+.testimonial-author { display: flex; align-items: center; gap: 14px; }
+.author-avatar {
+  width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--border);
+}
+.author-avatar-placeholder {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-lt) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.author-name { font-size: 14px; font-weight: 700; color: var(--text); }
+.author-role { font-size: 12px; color: var(--muted); }
+
+/* ── About ────────────────────────────────────────── */
+#about .about-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.about-img-wrap { position: relative; }
+.about-img-wrap img {
+  border-radius: 20px; width: 100%;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 80px rgba(0,0,0,.5);
+}
+.about-badge {
+  position: absolute; top: 24px; right: -24px;
+  background: var(--lime); color: #060810;
+  font-size: 13px; font-weight: 800;
+  padding: 10px 18px; border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(182,239,69,.3);
+}
+.about-text h2 { margin-bottom: 20px; }
+.about-text p { color: var(--muted); margin-bottom: 20px; line-height: 1.8; }
+.skills {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+}
+.skill-tag {
+  font-size: 13px; font-weight: 600; padding: 7px 16px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; color: var(--muted);
+}
+
+/* ── CTA Section ──────────────────────────────────── */
+#cta {
+  padding: 96px 0;
+  background: linear-gradient(135deg, rgba(108,78,242,.12) 0%, rgba(182,239,69,.06) 100%);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+#cta h2 { font-size: clamp(30px, 4.5vw, 52px); font-weight: 900; margin-bottom: 20px; }
+#cta p { font-size: 18px; color: var(--muted); margin-bottom: 40px; }
+#cta .btn { font-size: 17px; padding: 18px 40px; }
+
+/* ── Footer ───────────────────────────────────────── */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.footer-copy { font-size: 13px; color: var(--muted); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: var(--muted); transition: color .2s; }
+.footer-links a:hover { color: var(--text); }
+
+/* ── Lightbox ─────────────────────────────────────── */
+#lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,.95); backdrop-filter: blur(8px);
+  display: none; align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lightbox-img {
+  max-width: 92vw; max-height: 88vh;
+  border-radius: 12px; object-fit: contain;
+  box-shadow: 0 40px 120px rgba(0,0,0,.8);
+  user-select: none;
+}
+#lightbox-close {
+  position: fixed; top: 20px; right: 24px;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(255,255,255,.1); color: #fff; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s;
+}
+#lightbox-close:hover { background: rgba(255,255,255,.2); }
+#lightbox-prev, #lightbox-next {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(255,255,255,.1); color: #fff; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s; user-select: none;
+}
+#lightbox-prev { left: 20px; }
+#lightbox-next { right: 20px; }
+#lightbox-prev:hover, #lightbox-next:hover { background: rgba(255,255,255,.2); }
+#lightbox-caption {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.6); backdrop-filter: blur(8px);
+  color: #fff; font-size: 14px; padding: 10px 20px; border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* ── Mobile nav ───────────────────────────────────── */
+#mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(7,9,15,.97); flex-direction: column;
+  align-items: center; justify-content: center; gap: 32px;
+}
+#mobile-menu.open { display: flex; }
+#mobile-menu a {
+  font-size: 24px; font-weight: 700; color: var(--text);
+  transition: color .2s;
+}
+#mobile-menu a:hover { color: var(--lime); }
+#mobile-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; color: var(--text); font-size: 28px;
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { display: none; }
+  #about .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-wrap { max-width: 420px; }
+  .about-badge { right: 8px; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta .btn-outline { display: none; }
+  #hamburger { display: flex; }
+  .section { padding: 64px 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .hero-stats { gap: 24px; }
+  .tab-bar { border-radius: var(--radius); }
+  .portfolio-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+@media (max-width: 480px) {
+  .creatives-grid { grid-template-columns: repeat(2, 1fr); }
+  #lightbox-prev { left: 8px; }
+  #lightbox-next { right: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <div class="container">
+    <a class="nav-logo" href="#hero">
+      <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Logo.svg" alt="Mrinmoy Sadiq" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#campaigns">Ad Campaigns</a></li>
+      <li><a href="#funnels">Landing Pages</a></li>
+      <li><a href="#creatives">Ad Creatives</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="#testimonials">See Results</a>
+      <a class="btn btn-primary" href="https://calendly.com/mrinmoy-sadiq/30min" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+    <button id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── MOBILE MENU ── -->
+<div id="mobile-menu">
+  <button id="mobile-close" aria-label="Close">✕</button>
+  <a href="#campaigns" onclick="closeMobileMenu()">Ad Campaigns</a>
+  <a href="#funnels" onclick="closeMobileMenu()">Landing Pages</a>
+  <a href="#creatives" onclick="closeMobileMenu()">Ad Creatives</a>
+  <a href="#testimonials" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a class="btn btn-primary" href="https://calendly.com/mrinmoy-sadiq/30min" target="_blank" rel="noopener" onclick="closeMobileMenu()">Book a Free Call</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Top-Rated on Upwork · 5+ Years Experience
+        </div>
+        <h1 class="hero-title">
+          Paid Ads, Funnels &<br />
+          <span class="accent">GoHighLevel</span><br />
+          Done For You.
+        </h1>
+        <p class="hero-desc">
+          I help agencies &amp; service businesses build complete client acquisition systems — combining paid ads, high-converting funnels, and GoHighLevel automations into one seamless done-for-you system.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://calendly.com/mrinmoy-sadiq/30min" target="_blank" rel="noopener">
+            Book a Free Discovery Call →
+          </a>
+          <a class="btn btn-outline" href="#campaigns">View My Work</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">100+</div>
+            <div class="lbl">Service Businesses</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">10+</div>
+            <div class="lbl">Agency Clients</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">5+</div>
+            <div class="lbl">Years Managing Campaigns</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Main-Content.png" alt="Portfolio preview" loading="eager" />
+          <div class="hero-badge-float">
+            <div class="icon">⭐</div>
+            <div class="info">
+              <div class="top">Top-Rated Expert</div>
+              <div class="bot">Upwork · Paid Ads &amp; GHL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUSTED BY ── -->
+<section id="clients">
+  <div class="marquee-track" id="marqueeTrack">
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Point-22.png" alt="Point 22" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Anywhere-Advisors.png" alt="Anywhere Advisors" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Brand-Clinic.png" alt="Brand Clinic" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Guac-Digital.png" alt="Guac Digital" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/BnB-Boost-1.png" alt="BnB Boost" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Proxel-Solutions.png" alt="Proxel Solutions" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/The-Core-Room-Gold-logo.png" alt="The Core Room" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/HD-Transparent-Logo-e1567409676903.png" alt="Client" />
+    <!-- duplicate for seamless loop -->
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Point-22.png" alt="Point 22" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Anywhere-Advisors.png" alt="Anywhere Advisors" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Brand-Clinic.png" alt="Brand Clinic" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Guac-Digital.png" alt="Guac Digital" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/BnB-Boost-1.png" alt="BnB Boost" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Proxel-Solutions.png" alt="Proxel Solutions" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/The-Core-Room-Gold-logo.png" alt="The Core Room" />
+    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/HD-Transparent-Logo-e1567409676903.png" alt="Client" />
+  </div>
+</section>
+
+<!-- ── AD CAMPAIGN RESULTS ── -->
+<section id="campaigns" class="section">
+  <div class="container">
+    <div class="section-label">Ad Campaign Results</div>
+    <h2 class="section-title">Verified Campaign Screenshots</h2>
+    <p class="section-sub">Real results from Facebook Ads, Google Ads, and GoHighLevel integrations. Every screenshot is from an actual client campaign.</p>
+
+    <div style="margin-top: 40px;">
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('fb')">Facebook Ads</button>
+        <button class="tab-btn" onclick="switchTab('google')">Google Ads</button>
+        <button class="tab-btn" onclick="switchTab('ghl')">GoHighLevel</button>
+      </div>
+
+      <!-- Facebook Ads -->
+      <div class="tab-pane active" id="tab-fb">
+        <div class="portfolio-grid" data-gallery="fb">
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Facebook_Ads_for_Remodeling_Company-1024x593.png" data-caption="Facebook Ads – Remodeling Company">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Facebook_Ads_for_Remodeling_Company-1024x593.png" alt="Facebook Ads Remodeling Company" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Remodeling Company</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB-Ads-_-Tree-Service-Business-1024x589.png" data-caption="Facebook Ads – Tree Service Business">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB-Ads-_-Tree-Service-Business-1024x589.png" alt="Facebook Ads Tree Service" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Tree Service Business</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB-Ads_Design_and_Remodel-1024x457.png" data-caption="Facebook Ads – Design & Remodel">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB-Ads_Design_and_Remodel-1024x457.png" alt="Facebook Ads Design Remodel" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Design & Remodel</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB-Ads_Mens-Health-Clinic-1024x515.png" data-caption="Facebook Ads – Men's Health Clinic">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB-Ads_Mens-Health-Clinic-1024x515.png" alt="Facebook Ads Mens Health Clinic" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Men's Health Clinic</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Business_Funding_Company-1024x481.png" data-caption="Facebook Ads – Business Funding Company">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Business_Funding_Company-1024x481.png" alt="Facebook Ads Business Funding" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Business Funding Company</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Flooring_Business-scaled.png" data-caption="Facebook Ads – Flooring Business">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Flooring_Business-scaled.png" alt="Facebook Ads Flooring" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Flooring Business</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Kitchen_and_Bath_remodel-1024x378.png" data-caption="Facebook Ads – Kitchen & Bath Remodel">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Kitchen_and_Bath_remodel-1024x378.png" alt="Facebook Ads Kitchen Bath" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Kitchen & Bath Remodel</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Tax_Business_Coach-1024x515.png" data-caption="Facebook Ads – Tax Business Coach">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/FB_Ads_Tax_Business_Coach-1024x515.png" alt="Facebook Ads Tax Coach" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Tax Business Coach</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Ads -->
+      <div class="tab-pane" id="tab-google">
+        <div class="portfolio-grid" data-gallery="google">
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_KitchenBathroom_Remodeling.png" data-caption="Google Ads – Kitchen & Bathroom Remodeling">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_KitchenBathroom_Remodeling.png" alt="Google Ads Kitchen Bathroom" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Kitchen & Bathroom Remodeling</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_BeforeAfter.png" data-caption="Google Ads – Before & After Results">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_BeforeAfter.png" alt="Google Ads Before After" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Before & After Results</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_BeforeAfter-1.png" data-caption="Google Ads – Before & After (Campaign 2)">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_BeforeAfter-1.png" alt="Google Ads Before After 2" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Before & After (Campaign 2)</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_ads-result_countertops-scaled.png" data-caption="Google Ads – Countertop Installation">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_ads-result_countertops-scaled.png" alt="Google Ads Countertops" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Countertop Installation</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_ads_Earwax-scaled.png" data-caption="Google Ads – Earwax Clinic">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_ads_Earwax-scaled.png" alt="Google Ads Earwax" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Earwax Clinic</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Auto-Details-1024x448.png" data-caption="Google Ads – Auto Detailing">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Auto-Details-1024x448.png" alt="Google Ads Auto Details" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Auto Detailing</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Local-Custom-Home-Builder-1024x443.png" data-caption="Google Ads – Custom Home Builder">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Local-Custom-Home-Builder-1024x443.png" alt="Google Ads Home Builder" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Custom Home Builder</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google-Ads-How-I-Increased-the-Conversion-Rate-by-Optimizing-a-Form-Submission-Page-scaled.png" data-caption="Google Ads – Conversion Rate Optimization">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google-Ads-How-I-Increased-the-Conversion-Rate-by-Optimizing-a-Form-Submission-Page-scaled.png" alt="Google Ads CRO" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Conversion Rate Optimization</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_conversion_tracking.png" data-caption="Google Ads – Conversion Tracking Setup">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Google_Ads_conversion_tracking.png" alt="Google Ads Conversion Tracking" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Conversion Tracking Setup</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GoHighLevel -->
+      <div class="tab-pane" id="tab-ghl">
+        <div class="portfolio-grid" data-gallery="ghl">
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel-Automation-Lead-to-Appointment-1024x853.png" data-caption="GHL – Lead to Appointment Automation">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel-Automation-Lead-to-Appointment-1024x853.png" alt="GHL Automation" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Lead to Appointment Automation</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel-Dashboard-1024x588.png" data-caption="GHL – Custom Dashboard">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel-Dashboard-1024x588.png" alt="GHL Dashboard" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Custom Dashboard</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel_Dynamic_location_changes-1024x592.png" data-caption="GHL – Dynamic Location Insertion">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel_Dynamic_location_changes-1024x592.png" alt="GHL Dynamic Location" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Dynamic Location Insertion</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel_Inbound_Webhok-1024x585.png" data-caption="GHL – Inbound Webhook Integration">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GoHighLevel_Inbound_Webhok-1024x585.png" alt="GHL Webhook" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Inbound Webhook Integration</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GHL-Meta-Ads-Offline-Tracking-1024x354.png" data-caption="GHL – Meta Ads Offline Conversion Tracking">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/GHL-Meta-Ads-Offline-Tracking-1024x354.png" alt="GHL Meta Offline Tracking" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Meta Ads Offline Tracking</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Meta-Ads-Offline-Conversion-Tracking-1024x307.png" data-caption="GHL – Meta Offline Conversion Setup">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Meta-Ads-Offline-Conversion-Tracking-1024x307.png" alt="Meta Offline Conversion" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">Meta Offline Conversion Setup</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+          <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/A2P-Verification-1024x525.png" data-caption="GHL – Successful A2P 10DLC Verification">
+            <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/A2P-Verification-1024x525.png" alt="A2P Verification" loading="lazy" />
+            <div class="overlay"><span class="overlay-label">A2P 10DLC Verification</span></div>
+            <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LANDING PAGES & FUNNELS ── -->
+<section id="funnels" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Landing Pages & Funnels</div>
+    <h2 class="section-title">High-Converting Funnels</h2>
+    <p class="section-sub">Funnels designed &amp; optimized inside GHL, WordPress, Systeme.io, Unbounce, and ClickFunnels. Built to convert traffic into booked calls.</p>
+
+    <div class="portfolio-grid" style="margin-top: 40px;" data-gallery="funnels">
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Krown-Thereapy-Landing-Page-Thumbnail.png" data-caption="Krown Therapy – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Krown-Thereapy-Landing-Page-Thumbnail.png" alt="Therapy Clinic Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Krown Therapy Clinic</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Nura-Thereapy-Landing-Page-Thumbnail.png" data-caption="Nura Therapy – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Nura-Thereapy-Landing-Page-Thumbnail.png" alt="Nura Therapy Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Nura Therapy</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-Landing-Page-1.png" data-caption="Senior Care – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-Landing-Page-1.png" alt="Senior Care Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Senior Care Landing Page</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-2.png" data-caption="Senior Care – Landing Page v2">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-2.png" alt="Senior Care v2" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Senior Care (v2)</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Kitchen-Remodeling.png" data-caption="Kitchen Remodeling – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Kitchen-Remodeling.png" alt="Kitchen Remodeling Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Kitchen Remodeling</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Performance-Clinic-Funnel.png" data-caption="Mother Performance Clinic – Funnel">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Performance-Clinic-Funnel.png" alt="Mother Performance Clinic Funnel" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Mother Performance Clinic</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Perfemance.png" data-caption="Mother Performance – Funnel v2">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Perfemance.png" alt="Mother Performance Funnel" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Mother Performance (v2)</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Painting-Service.png" data-caption="Painting Service – Landing Page (FB Ads)">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Painting-Service.png" alt="Painting Service Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Painting Service (FB Ads)</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Health-and-beauty.png" data-caption="Premarital Couple Health & Beauty Funnel">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Health-and-beauty.png" alt="Health and Beauty Funnel" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Health & Beauty Funnel</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Financial-Coach-jhon.png" data-caption="Financial Coach – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Financial-Coach-jhon.png" alt="Financial Coach Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Financial Coach</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Recruitement-Funnel.png" data-caption="Recruitment Funnel">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Recruitement-Funnel.png" alt="Recruitment Funnel" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Recruitment Funnel</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/AI-Marketing-Funnel.png" data-caption="AI Marketing Funnel">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/AI-Marketing-Funnel.png" alt="AI Marketing Funnel" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">AI Marketing Funnel</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Aesthetic-Clinic-Landing-Page-1.png" data-caption="Aesthetic Clinic – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Aesthetic-Clinic-Landing-Page-1.png" alt="Aesthetic Clinic Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Aesthetic Clinic</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/B-Forbes-Landing-Page-Thumbnail.png" data-caption="B Forbes – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/B-Forbes-Landing-Page-Thumbnail.png" alt="B Forbes Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">B Forbes</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Fitness-Coach.png" data-caption="Fitness Coach – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Fitness-Coach.png" alt="Fitness Coach Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Fitness Coach</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Tax-Coach.png" data-caption="Tax Business Coach – Landing Page">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Tax-Coach.png" alt="Tax Coach Landing Page" loading="lazy" />
+        <div class="overlay"><span class="overlay-label">Tax Business Coach</span></div>
+        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AD CREATIVES ── -->
+<section id="creatives" class="section">
+  <div class="container">
+    <div class="section-label">Ad Creatives</div>
+    <h2 class="section-title">Creatives That Convert</h2>
+    <p class="section-sub">Copy, visuals, and hooks tailored to each niche and buyer persona.</p>
+
+    <div class="creatives-grid" style="margin-top: 40px;" data-gallery="creatives">
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/AC_1.png" data-caption="Ad Creative 1">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/AC_1.png" alt="Ad Creative 1" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/AC_2.png" data-caption="Ad Creative 2">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/AC_2.png" alt="Ad Creative 2" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ADS-3-f2.png" data-caption="Ad Creative 3">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ADS-3-f2.png" alt="Ad Creative 3" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Ads-11.png" data-caption="Ad Creative 4">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Ads-11.png" alt="Ad Creative 4" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Ads-2-11.png" data-caption="Ad Creative 5">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Ads-2-11.png" alt="Ad Creative 5" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1-f.png" data-caption="Ad Creative 6">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1-f.png" alt="Ad Creative 6" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1-image-1-f.png" data-caption="Ad Creative 7">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1-image-1-f.png" alt="Ad Creative 7" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1-image-3-f.png" data-caption="Ad Creative 8">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1-image-3-f.png" alt="Ad Creative 8" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1.png" data-caption="Ad Creative 9">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-1.png" alt="Ad Creative 9" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-2-1.png" data-caption="Ad Creative 10">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-2-1.png" alt="Ad Creative 10" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-3.png" data-caption="Ad Creative 11">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-3.png" alt="Ad Creative 11" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-4-kf.png" data-caption="Ad Creative 12">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ads-4-kf.png" alt="Ad Creative 12" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/dr-cooling-AC-ads-5.png" data-caption="Dr Cooling – AC Ad Creative">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/dr-cooling-AC-ads-5.png" alt="Dr Cooling Ad Creative" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/adimage1.png" data-caption="Ad Creative – Image 1">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/adimage1.png" alt="Ad Image 1" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ad-image2I.png" data-caption="Ad Creative – Image 2">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/ad-image2I.png" alt="Ad Image 2" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/EZ_1.png" data-caption="EZ – Ad Creative 1">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/EZ_1.png" alt="EZ Creative 1" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/EZ_4.png" data-caption="EZ – Ad Creative 4">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/EZ_4.png" alt="EZ Creative 4" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/EZ_5.png" data-caption="EZ – Ad Creative 5">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/EZ_5.png" alt="EZ Creative 5" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/SF_1.png" data-caption="SF – Ad Creative">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/SF_1.png" alt="SF Creative" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Home-Insurance-3.png" data-caption="Home Insurance – Ad Creative">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Home-Insurance-3.png" alt="Home Insurance Creative" loading="lazy" />
+      </div>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Before-After-1024x784.png" data-caption="Before & After – Ad Creative">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Before-After-1024x784.png" alt="Before After Creative" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VIDEOS ── -->
+<section id="videos" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label">Video Walkthroughs</div>
+    <h2 class="section-title">Watch the Work in Action</h2>
+    <p class="section-sub">Campaign breakdowns, funnel walkthroughs, and GoHighLevel tutorials from real client projects.</p>
+
+    <div class="videos-grid" style="margin-top: 40px;">
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/4GBA1OkSmn4"
+          title="Campaign Walkthrough 1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/noqHX7gtcl0"
+          title="Campaign Walkthrough 2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-card short">
+        <iframe
+          src="https://www.youtube.com/embed/rAwUN5JaRxM"
+          title="Short Clip"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-label">Testimonials</div>
+    <h2 class="section-title">What My Clients Say</h2>
+    <p class="section-sub">Unfiltered, unscripted feedback from agencies and service business founders I've partnered with.</p>
+
+    <div class="testimonials-grid" style="margin-top: 48px;">
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Mrinmoy is a talented paid search expert, he has been helping me set up, maintain and optimize my Google Ads account. He has shown good initiative and strong communication skills. He is also very reliable and has a high amount of integrity. I highly recommend him to anyone looking for a solid Google Ads manager."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar-placeholder">A</div>
+          <div>
+            <div class="author-name">Anwar Hasen</div>
+            <div class="author-role">Point 22 · Marketing Agency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Mrinmoy has been an indispensable asset to my business, expertly managing our Meta and Google Ads campaigns while seamlessly handling all backend operations on GoHighLevel. His strategic approach and technical expertise have significantly enhanced our advertising performance, making a tangible impact on our growth and success."</p>
+        <div class="testimonial-author">
+          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Brand-Clinic.jpeg" alt="Aaron DeBenedetto" />
+          <div>
+            <div class="author-name">Aaron DeBenedetto</div>
+            <div class="author-role">Mustard Growth Marketing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"This guy is the best! I highly recommend him for anything related to GHL, Google Ads and Facebook Ads. I've never hired someone for work like this before but I was beyond impressed with his cooperation and knowledge! I look forward to many projects with him."</p>
+        <div class="testimonial-author">
+          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Ultimate-Shield.jpeg" alt="Cobin Heiland" />
+          <div>
+            <div class="author-name">Cobin Heiland</div>
+            <div class="author-role">Ultimate Shield · Marketing Agency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Mrinmoy truly impressed me with his intuitive understanding of how to build a successful paid campaign. He took the time to analyze our broader strategic objectives before jumping in, always offering his professional insights where he thought something could be improved. He then nurtured the new campaign hour by hour in its first week to ensure the highest ROI."</p>
+        <div class="testimonial-author">
+          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/karimah.jpeg" alt="Karimah Whitaker" />
+          <div>
+            <div class="author-name">Karimah Whitaker</div>
+            <div class="author-role">Gelcom · Marketing Agency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Mrinmoy is not only extremely talented and professional but he has exceeded both expectations and duties for every job he's worked on for us. Mrinmoy truly goes the extra mile to ensure success. I will be using Mrinmoy for many new projects in the near future. I highly recommend Mrinmoy as a very competent and professional resource for your project."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar-placeholder">J</div>
+          <div>
+            <div class="author-name">Jeffrey Nahom</div>
+            <div class="author-role">Orlando Las Vegas · Tourism</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Mrinmoy is an exceptional talent and a very hard worker. Mrinmoy helped us optimize our GHL account and created a variety of automations for us as well! Great work! Highly recommend!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar-placeholder">A</div>
+          <div>
+            <div class="author-name">Anthony El Chibani</div>
+            <div class="author-role">Brand Clinic · Marketing Agency</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Mrinmoy did an exceptional job helping us create several Google Ads, Google Tag Manager, and Google Analytics accounts from scratch. His expertise was evident from the beginning, and he guided us through the setup process with ease."</p>
+        <div class="testimonial-author">
+          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Life-in-Motion.jpeg" alt="Heather Frigaard" />
+          <div>
+            <div class="author-name">Heather Frigaard</div>
+            <div class="author-role">Life in Motion</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="testimonial-text">"Been working with Mrinmoy for a bit now and honestly, he knows his stuff. What really stood out to me was how smooth everything ran on GoHighLevel — from the funnels to the automations. The ad campaigns had amazing ROI. He actually cared about the results and kept things clear the whole way through. If you're using GoHighLevel and need someone who actually gets it, this is your guy."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar-placeholder">C</div>
+          <div>
+            <div class="author-name">Client Review</div>
+            <div class="author-role">GoHighLevel & Paid Ads</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/IMG_7048-1.png" alt="Mrinmoy Sadiq" loading="lazy" />
+        <div class="about-badge">5+ Years Experience</div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">Who I Am</div>
+        <h2 class="section-title">I'm Mrinmoy Sadiq</h2>
+        <p>I'm a Top-Rated paid ads and GoHighLevel expert on Upwork with over 5 years of hands-on experience managing performance campaigns for agencies and service businesses worldwide.</p>
+        <p>From campaign strategy to ad content, funnel optimization, and automations — everything is handled end-to-end so you can focus on growth, not delivery.</p>
+        <p>I've partnered with 10+ agencies and helped 100+ service businesses build reliable client acquisition systems that actually convert.</p>
+        <div class="skills">
+          <span class="skill-tag">Facebook Ads</span>
+          <span class="skill-tag">Google Ads</span>
+          <span class="skill-tag">GoHighLevel</span>
+          <span class="skill-tag">Funnel Design</span>
+          <span class="skill-tag">Ad Creatives</span>
+          <span class="skill-tag">Conversion Tracking</span>
+          <span class="skill-tag">A2P 10DLC</span>
+          <span class="skill-tag">Offline Conversions</span>
+          <span class="skill-tag">Automation Workflows</span>
+          <span class="skill-tag">CRO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <div class="container">
+    <div class="section-label" style="margin-bottom: 24px;">Ready to Scale?</div>
+    <h2>Let's Build Your Client<br />Acquisition Engine</h2>
+    <p>Book a free 30-minute discovery call and let's map out exactly how to grow your business with paid ads, funnels, and GoHighLevel.</p>
+    <a class="btn btn-primary" href="https://calendly.com/mrinmoy-sadiq/30min" target="_blank" rel="noopener">
+      Book a Free Discovery Call →
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">© 2025 Mrinmoy Sadiq. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#campaigns">Ad Campaigns</a>
+        <a href="#funnels">Landing Pages</a>
+        <a href="#creatives">Ad Creatives</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="https://calendly.com/mrinmoy-sadiq/30min" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <button id="lightbox-prev" onclick="lightboxNav(-1)" aria-label="Previous">‹</button>
+  <img id="lightbox-img" src="" alt="" />
+  <button id="lightbox-next" onclick="lightboxNav(1)" aria-label="Next">›</button>
+  <div id="lightbox-caption"></div>
+</div>
+
+<script>
+// ── NAV scroll ──────────────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// ── Hamburger ───────────────────────────────────────
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobile-menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('mobile-close').addEventListener('click', closeMobileMenu);
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── Tabs ────────────────────────────────────────────
+function switchTab(id) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    const ids = ['fb', 'google', 'ghl'];
+    b.classList.toggle('active', ids[i] === id);
+  });
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+}
+
+// ── Lightbox ─────────────────────────────────────────
+let galleryItems = [];
+let currentIdx = 0;
+
+function buildGallery(clickedEl) {
+  // Find the parent gallery container
+  const parent = clickedEl.closest('[data-gallery]') || clickedEl.parentElement;
+  const items = parent.querySelectorAll('[data-src]');
+  galleryItems = Array.from(items).map(el => ({
+    src: el.dataset.src,
+    caption: el.dataset.caption || ''
+  }));
+  currentIdx = Array.from(items).indexOf(clickedEl);
+}
+
+function openLightbox(el) {
+  buildGallery(el);
+  showLightboxItem(currentIdx);
+  const lb = document.getElementById('lightbox');
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function showLightboxItem(idx) {
+  if (idx < 0) idx = galleryItems.length - 1;
+  if (idx >= galleryItems.length) idx = 0;
+  currentIdx = idx;
+  const item = galleryItems[idx];
+  const img = document.getElementById('lightbox-img');
+  img.src = item.src;
+  img.alt = item.caption;
+  document.getElementById('lightbox-caption').textContent = item.caption;
+  // Show/hide nav arrows
+  document.getElementById('lightbox-prev').style.display = galleryItems.length > 1 ? 'flex' : 'none';
+  document.getElementById('lightbox-next').style.display = galleryItems.length > 1 ? 'flex' : 'none';
+}
+
+function lightboxNav(dir) {
+  showLightboxItem(currentIdx + dir);
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightbox-img').src = '';
+  document.body.style.overflow = '';
+}
+
+// Close on backdrop click
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLightbox();
+});
+
+// Keyboard nav
+document.addEventListener('keydown', (e) => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') lightboxNav(1);
+  if (e.key === 'ArrowLeft') lightboxNav(-1);
+});
+
+// Touch swipe support
+let touchStartX = 0;
+document.getElementById('lightbox').addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+document.getElementById('lightbox').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  if (Math.abs(dx) > 50) lightboxNav(dx < 0 ? 1 : -1);
+}, { passive: true });
+</script>
+</body>
+</html>
