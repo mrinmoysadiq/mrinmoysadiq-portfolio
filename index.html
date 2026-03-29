@@ -267,6 +267,96 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 /* tall images (portrait funnels) */
 .portfolio-item.tall img { aspect-ratio: 3/4; object-fit: cover; }
 
+/* ── Funnel / Landing Page cards ─────────────────── */
+.funnel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.funnel-card {
+  position: relative; border-radius: var(--radius);
+  overflow: hidden; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border);
+  transition: transform .25s, box-shadow .25s;
+}
+.funnel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  border-color: rgba(108,78,242,.4);
+}
+.funnel-card .thumb {
+  width: 100%; aspect-ratio: 9/14;
+  object-fit: cover; object-position: top;
+  display: block; transition: transform .5s;
+}
+.funnel-card:hover .thumb { transform: scale(1.03); }
+.funnel-card .funnel-info {
+  padding: 12px 14px;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+}
+.funnel-card .funnel-name {
+  font-size: 13px; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.funnel-card .funnel-hint {
+  font-size: 11px; color: var(--muted); margin-top: 3px;
+}
+.funnel-card .funnel-expand {
+  position: absolute; top: 10px; right: 10px;
+  width: 32px; height: 32px; border-radius: 8px;
+  background: rgba(0,0,0,.55); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity .2s;
+}
+.funnel-card:hover .funnel-expand { opacity: 1; }
+.funnel-expand svg { width: 16px; height: 16px; fill: #fff; }
+
+/* ── Page Viewer (scrollable full-page modal) ─────── */
+#page-viewer {
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(0,0,0,.96);
+  display: none; flex-direction: column;
+}
+#page-viewer.open { display: flex; }
+.pv-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; flex-shrink: 0;
+  background: rgba(13,16,32,.95); border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+.pv-title {
+  font-size: 14px; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 50%;
+}
+.pv-controls { display: flex; align-items: center; gap: 8px; }
+.pv-btn {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text); font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background .2s;
+}
+.pv-btn:hover { background: var(--card); border-color: var(--purple); }
+.pv-zoom-label {
+  font-size: 13px; color: var(--muted); min-width: 44px; text-align: center;
+}
+.pv-body {
+  flex: 1; overflow: auto; display: flex;
+  justify-content: center; padding: 24px;
+  -webkit-overflow-scrolling: touch;
+}
+.pv-body img {
+  display: block; height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 60px rgba(0,0,0,.6);
+  transition: width .2s;
+  user-select: none;
+}
+
 /* ── Ad Creatives grid ────────────────────────────── */
 .creatives-grid {
   display: grid;
@@ -478,8 +568,19 @@ footer {
   .about-img-wrap { max-width: 420px; }
   .about-badge { right: 8px; }
   .videos-grid { grid-template-columns: 1fr; }
+  .funnel-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
+  .funnel-grid {
+    display: flex; flex-direction: row;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    gap: 12px; padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .funnel-grid::-webkit-scrollbar { display: none; }
+  .funnel-grid .funnel-card {
+    flex: 0 0 52vw; max-width: 220px; scroll-snap-align: start;
+  }
   .nav-links, .nav-cta .btn-outline { display: none; }
   #hamburger { display: flex; }
   .section { padding: 64px 0; }
@@ -547,6 +648,22 @@ footer {
     </button>
   </div>
 </nav>
+
+<!-- ── PAGE VIEWER (scrollable landing page modal) ── -->
+<div id="page-viewer">
+  <div class="pv-header">
+    <div class="pv-title" id="pv-title">Landing Page</div>
+    <div class="pv-controls">
+      <button class="pv-btn" onclick="pvZoom(-1)" title="Zoom out">−</button>
+      <span class="pv-zoom-label" id="pv-zoom-label">100%</span>
+      <button class="pv-btn" onclick="pvZoom(1)" title="Zoom in">+</button>
+      <button class="pv-btn" onclick="closePageViewer()" title="Close" style="margin-left:8px; font-size:16px;">✕</button>
+    </div>
+  </div>
+  <div class="pv-body" id="pv-body">
+    <img id="pv-img" src="" alt="" />
+  </div>
+</div>
 
 <!-- ── MOBILE MENU ── -->
 <div id="mobile-menu">
@@ -883,96 +1000,90 @@ footer {
   <div class="container">
     <div class="section-label" data-animate>Landing Pages & Funnels</div>
     <h2 class="section-title" data-animate data-delay="1">High-Converting Funnels</h2>
-    <p class="section-sub" data-animate data-delay="2">Funnels designed &amp; optimized inside GHL, WordPress, Systeme.io, Unbounce, and ClickFunnels. Built to convert traffic into booked calls.</p>
+    <p class="section-sub" data-animate data-delay="2">Funnels designed &amp; optimized inside GHL, WordPress, Systeme.io, Unbounce, and ClickFunnels. Click any page to scroll through the full design.</p>
 
-    <div class="scroll-wrapper" style="margin-top: 40px;">
-    <div class="scroll-arrows">
-      <button class="scroll-arrow" onclick="scrollGallery('grid-funnels',-1)">&#8592;</button>
-      <button class="scroll-arrow" onclick="scrollGallery('grid-funnels', 1)">&#8594;</button>
-    </div>
-    <div class="portfolio-grid" id="grid-funnels" data-gallery="funnels">
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Krown-Thereapy-Landing-Page-Thumbnail.png" data-caption="Krown Therapy – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Krown-Thereapy-Landing-Page-Thumbnail.png" alt="Therapy Clinic Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Krown Therapy Clinic</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+    <div class="funnel-grid" id="grid-funnels">
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Therapy_Clinic.png','Therapy Clinic')">
+        <img class="thumb" src="images/landing-pages/Therapy_Clinic.png" alt="Therapy Clinic" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Therapy Clinic</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Nura-Thereapy-Landing-Page-Thumbnail.png" data-caption="Nura Therapy – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Nura-Thereapy-Landing-Page-Thumbnail.png" alt="Nura Therapy Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Nura Therapy</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Senior_Care_Landing_Page.png','Senior Care')">
+        <img class="thumb" src="images/landing-pages/Senior_Care_Landing_Page.png" alt="Senior Care" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Senior Care</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-Landing-Page-1.png" data-caption="Senior Care – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-Landing-Page-1.png" alt="Senior Care Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Senior Care Landing Page</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Kitchen_Remodeling.png','Kitchen Remodeling')">
+        <img class="thumb" src="images/landing-pages/Kitchen_Remodeling.png" alt="Kitchen Remodeling" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Kitchen Remodeling</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-2.png" data-caption="Senior Care – Landing Page v2">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Senior-Care-2.png" alt="Senior Care v2" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Senior Care (v2)</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Mother_Performance_Clinic_Funnel.png','Mother Performance Clinic')">
+        <img class="thumb" src="images/landing-pages/Mother_Performance_Clinic_Funnel.png" alt="Mother Performance Clinic" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Mother Performance Clinic</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Kitchen-Remodeling.png" data-caption="Kitchen Remodeling – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Kitchen-Remodeling.png" alt="Kitchen Remodeling Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Kitchen Remodeling</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Motherhood_Landing_Page.png','Motherhood Landing Page')">
+        <img class="thumb" src="images/landing-pages/Motherhood_Landing_Page.png" alt="Motherhood Landing Page" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Motherhood Landing Page</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Performance-Clinic-Funnel.png" data-caption="Mother Performance Clinic – Funnel">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Performance-Clinic-Funnel.png" alt="Mother Performance Clinic Funnel" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Mother Performance Clinic</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Painitng_Landing_Page_For_FB_Ads.jpeg','Painting Service – FB Ads')">
+        <img class="thumb" src="images/landing-pages/Painitng_Landing_Page_For_FB_Ads.jpeg" alt="Painting Service" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Painting Service</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Perfemance.png" data-caption="Mother Performance – Funnel v2">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Mother-Perfemance.png" alt="Mother Performance Funnel" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Mother Performance (v2)</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Premarital_Couple_Health_and_Beauty_Funnel.png','Premarital Couple – Health & Beauty')">
+        <img class="thumb" src="images/landing-pages/Premarital_Couple_Health_and_Beauty_Funnel.png" alt="Health and Beauty Funnel" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Health & Beauty Funnel</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Painting-Service.png" data-caption="Painting Service – Landing Page (FB Ads)">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Painting-Service.png" alt="Painting Service Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Painting Service (FB Ads)</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Financial_Coach.png','Financial Coach')">
+        <img class="thumb" src="images/landing-pages/Financial_Coach.png" alt="Financial Coach" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Financial Coach</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Health-and-beauty.png" data-caption="Premarital Couple Health & Beauty Funnel">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Health-and-beauty.png" alt="Health and Beauty Funnel" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Health & Beauty Funnel</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Recruitement_Funnel.png','Recruitment Funnel')">
+        <img class="thumb" src="images/landing-pages/Recruitement_Funnel.png" alt="Recruitment Funnel" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Recruitment Funnel</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Financial-Coach-jhon.png" data-caption="Financial Coach – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Financial-Coach-jhon.png" alt="Financial Coach Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Financial Coach</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/AI_and_Marketing_Funnel.png','AI & Marketing Funnel')">
+        <img class="thumb" src="images/landing-pages/AI_and_Marketing_Funnel.png" alt="AI Marketing Funnel" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">AI & Marketing Funnel</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Recruitement-Funnel.png" data-caption="Recruitment Funnel">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Recruitement-Funnel.png" alt="Recruitment Funnel" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Recruitment Funnel</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Aesthetic_Clinic_Landing_Page.png','Aesthetic Clinic')">
+        <img class="thumb" src="images/landing-pages/Aesthetic_Clinic_Landing_Page.png" alt="Aesthetic Clinic" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Aesthetic Clinic</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/AI-Marketing-Funnel.png" data-caption="AI Marketing Funnel">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/AI-Marketing-Funnel.png" alt="AI Marketing Funnel" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">AI Marketing Funnel</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Business_Funding.png','Business Funding')">
+        <img class="thumb" src="images/landing-pages/Business_Funding.png" alt="Business Funding" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Business Funding</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Aesthetic-Clinic-Landing-Page-1.png" data-caption="Aesthetic Clinic – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Aesthetic-Clinic-Landing-Page-1.png" alt="Aesthetic Clinic Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Aesthetic Clinic</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Car_wash_website.png','Car Wash Website')">
+        <img class="thumb" src="images/landing-pages/Car_wash_website.png" alt="Car Wash" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Car Wash Website</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/B-Forbes-Landing-Page-Thumbnail.png" data-caption="B Forbes – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/B-Forbes-Landing-Page-Thumbnail.png" alt="B Forbes Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">B Forbes</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Tax_Coach.png','Tax Business Coach')">
+        <img class="thumb" src="images/landing-pages/Tax_Coach.png" alt="Tax Coach" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Tax Business Coach</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Fitness-Coach.png" data-caption="Fitness Coach – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Fitness-Coach.png" alt="Fitness Coach Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Fitness Coach</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Landing_page.png','Landing Page')">
+        <img class="thumb" src="images/landing-pages/Landing_page.png" alt="Landing Page" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Landing Page</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
-      <div class="portfolio-item" onclick="openLightbox(this)" data-src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Tax-Coach.png" data-caption="Tax Business Coach – Landing Page">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Tax-Coach.png" alt="Tax Coach Landing Page" loading="lazy" />
-        <div class="overlay"><span class="overlay-label">Tax Business Coach</span></div>
-        <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
+      <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Landing_page_2.png','Landing Page 2')">
+        <img class="thumb" src="images/landing-pages/Landing_page_2.png" alt="Landing Page 2" loading="lazy" />
+        <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
+        <div class="funnel-info"><div class="funnel-name">Landing Page 2</div><div class="funnel-hint">Scroll to view full page ↓</div></div>
       </div>
     </div>
-    </div><!-- /scroll-wrapper -->
   </div>
 </section>
 
@@ -1411,6 +1522,34 @@ function scrollGallery(id, dir) {
     observer.observe(card);
   });
 })();
+
+// ── Page Viewer ──────────────────────────────────
+let pvZoomLevel = 100;
+function openPageViewer(src, caption) {
+  document.getElementById('pv-img').src = src;
+  document.getElementById('pv-title').textContent = caption;
+  pvZoomLevel = 100;
+  document.getElementById('pv-zoom-label').textContent = '100%';
+  document.getElementById('pv-img').style.width = '100%';
+  document.getElementById('page-viewer').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePageViewer() {
+  document.getElementById('page-viewer').classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('pv-img').src = '';
+}
+function pvZoom(dir) {
+  pvZoomLevel = Math.min(200, Math.max(50, pvZoomLevel + dir * 25));
+  document.getElementById('pv-zoom-label').textContent = pvZoomLevel + '%';
+  document.getElementById('pv-img').style.width = pvZoomLevel + '%';
+}
+document.getElementById('page-viewer').addEventListener('click', function(e) {
+  if (e.target === this || e.target === document.getElementById('pv-body')) closePageViewer();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closePageViewer();
+});
 </script>
 </body>
 </html>
