@@ -345,12 +345,14 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   font-size: 13px; color: var(--muted); min-width: 44px; text-align: center;
 }
 .pv-body {
-  flex: 1; overflow: auto; display: flex;
-  justify-content: center; padding: 24px;
+  flex: 1; overflow: auto;
+  padding: 24px 40px;
   -webkit-overflow-scrolling: touch;
 }
 .pv-body img {
   display: block; height: auto;
+  width: 900px; max-width: 100%;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 8px 60px rgba(0,0,0,.6);
   transition: width .2s;
@@ -1524,13 +1526,15 @@ function scrollGallery(id, dir) {
 })();
 
 // ── Page Viewer ──────────────────────────────────
+const PV_BASE = 900;
 let pvZoomLevel = 100;
 function openPageViewer(src, caption) {
   document.getElementById('pv-img').src = src;
   document.getElementById('pv-title').textContent = caption;
   pvZoomLevel = 100;
   document.getElementById('pv-zoom-label').textContent = '100%';
-  document.getElementById('pv-img').style.width = '100%';
+  document.getElementById('pv-img').style.width = PV_BASE + 'px';
+  document.getElementById('pv-body').scrollTop = 0;
   document.getElementById('page-viewer').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1542,7 +1546,7 @@ function closePageViewer() {
 function pvZoom(dir) {
   pvZoomLevel = Math.min(200, Math.max(50, pvZoomLevel + dir * 25));
   document.getElementById('pv-zoom-label').textContent = pvZoomLevel + '%';
-  document.getElementById('pv-img').style.width = pvZoomLevel + '%';
+  document.getElementById('pv-img').style.width = (PV_BASE * pvZoomLevel / 100) + 'px';
 }
 document.getElementById('page-viewer').addEventListener('click', function(e) {
   if (e.target === this || e.target === document.getElementById('pv-body')) closePageViewer();
