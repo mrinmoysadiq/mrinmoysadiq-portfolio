@@ -428,6 +428,27 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 .author-name { font-size: 14px; font-weight: 700; color: var(--text); }
 .author-role { font-size: 12px; color: var(--muted); }
 
+/* ── Tool Stack ──────────────────────────────────── */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.tool-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.tool-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108,78,242,.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+.tool-card img { height: 44px; width: auto; object-fit: contain; }
+.tool-name { font-size: 12px; font-weight: 600; color: var(--muted); text-align: center; line-height: 1.3; }
+
 /* ── About ────────────────────────────────────────── */
 #about .about-inner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
@@ -571,6 +592,7 @@ footer {
   .about-badge { right: 8px; }
   .videos-grid { grid-template-columns: 1fr; }
   .funnel-grid { grid-template-columns: repeat(3, 1fr); }
+  .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
 }
 @media (max-width: 768px) {
   .funnel-grid {
@@ -717,7 +739,7 @@ footer {
       </div>
       <div class="hero-visual">
         <div class="hero-img-wrap">
-          <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Main-Content.png" alt="Portfolio preview" loading="eager" />
+          <img src="images/hero_upwork.webp" alt="Portfolio preview" loading="eager" />
           <div class="hero-badge-float">
             <div class="icon">⭐</div>
             <div class="info">
@@ -734,23 +756,43 @@ footer {
 <!-- ── TRUSTED BY ── -->
 <section id="clients">
   <div class="marquee-track" id="marqueeTrack">
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Point-22.png" alt="Point 22" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Anywhere-Advisors.png" alt="Anywhere Advisors" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Brand-Clinic.png" alt="Brand Clinic" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Guac-Digital.png" alt="Guac Digital" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/BnB-Boost-1.png" alt="BnB Boost" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Proxel-Solutions.png" alt="Proxel Solutions" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/The-Core-Room-Gold-logo.png" alt="The Core Room" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/HD-Transparent-Logo-e1567409676903.png" alt="Client" />
+    <img src="images/logos/Point-22.webp" alt="Point 22" />
+    <img src="images/logos/Anywhere_Advisors.webp" alt="Anywhere Advisors" />
+    <img src="images/logos/Brand_Clinic.webp" alt="Brand Clinic" />
+    <img src="images/logos/Guac_Digital.webp" alt="Guac Digital" />
+    <img src="images/logos/BnB_Boost.webp" alt="BnB Boost" />
+    <img src="images/logos/Proxel_Solutions.webp" alt="Proxel Solutions" />
+    <img src="images/logos/The-Core-Room-Gold-logo.webp" alt="The Core Room" />
+    <img src="images/logos/mustard_growth.webp" alt="Mustard Growth" />
+    <img src="images/logos/ultimateshield.webp" alt="Ultimate Shield" />
+    <img src="images/logos/Creative_Vission.webp" alt="Creative Vission" />
+    <img src="images/logos/Elder_Answers.webp" alt="Elder Answers" />
+    <img src="images/logos/John_Mollura.webp" alt="John Mollura" />
+    <img src="images/logos/OLV.webp" alt="OLV" />
+    <img src="images/logos/Skyeai.avif" alt="Skye AI" />
+    <img src="images/logos/Optrex_AI_Logo_Icon.avif" alt="Optrex AI" />
+    <img src="images/logos/HD-Transparent-Logo-e1567409676903.webp" alt="Client" />
+    <img src="images/logos/LIM-Marketing.svg" alt="LIM Marketing" />
+    <img src="images/logos/Nonas_Home_Care.svg" alt="Nona's Home Care" />
     <!-- duplicate for seamless loop -->
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Point-22.png" alt="Point 22" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Anywhere-Advisors.png" alt="Anywhere Advisors" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Brand-Clinic.png" alt="Brand Clinic" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Guac-Digital.png" alt="Guac Digital" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/BnB-Boost-1.png" alt="BnB Boost" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/Proxel-Solutions.png" alt="Proxel Solutions" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/The-Core-Room-Gold-logo.png" alt="The Core Room" />
-    <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/HD-Transparent-Logo-e1567409676903.png" alt="Client" />
+    <img src="images/logos/Point-22.webp" alt="Point 22" />
+    <img src="images/logos/Anywhere_Advisors.webp" alt="Anywhere Advisors" />
+    <img src="images/logos/Brand_Clinic.webp" alt="Brand Clinic" />
+    <img src="images/logos/Guac_Digital.webp" alt="Guac Digital" />
+    <img src="images/logos/BnB_Boost.webp" alt="BnB Boost" />
+    <img src="images/logos/Proxel_Solutions.webp" alt="Proxel Solutions" />
+    <img src="images/logos/The-Core-Room-Gold-logo.webp" alt="The Core Room" />
+    <img src="images/logos/mustard_growth.webp" alt="Mustard Growth" />
+    <img src="images/logos/ultimateshield.webp" alt="Ultimate Shield" />
+    <img src="images/logos/Creative_Vission.webp" alt="Creative Vission" />
+    <img src="images/logos/Elder_Answers.webp" alt="Elder Answers" />
+    <img src="images/logos/John_Mollura.webp" alt="John Mollura" />
+    <img src="images/logos/OLV.webp" alt="OLV" />
+    <img src="images/logos/Skyeai.avif" alt="Skye AI" />
+    <img src="images/logos/Optrex_AI_Logo_Icon.avif" alt="Optrex AI" />
+    <img src="images/logos/HD-Transparent-Logo-e1567409676903.webp" alt="Client" />
+    <img src="images/logos/LIM-Marketing.svg" alt="LIM Marketing" />
+    <img src="images/logos/Nonas_Home_Care.svg" alt="Nona's Home Care" />
   </div>
 </section>
 
@@ -1241,7 +1283,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy is a talented paid search expert, he has been helping me set up, maintain and optimize my Google Ads account. He has shown good initiative and strong communication skills. He is also very reliable and has a high amount of integrity. I highly recommend him to anyone looking for a solid Google Ads manager."</p>
         <div class="testimonial-author">
-          <div class="author-avatar-placeholder">A</div>
+          <img class="author-avatar" src="images/testimonials/Point_22.webp" alt="Anwar Hasen" />
           <div>
             <div class="author-name">Anwar Hasen</div>
             <div class="author-role">Point 22 · Marketing Agency</div>
@@ -1253,7 +1295,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy has been an indispensable asset to my business, expertly managing our Meta and Google Ads campaigns while seamlessly handling all backend operations on GoHighLevel. His strategic approach and technical expertise have significantly enhanced our advertising performance, making a tangible impact on our growth and success."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Brand-Clinic.jpeg" alt="Aaron DeBenedetto" />
+          <img class="author-avatar" src="images/testimonials/Mustard_Growth.webp" alt="Aaron DeBenedetto" />
           <div>
             <div class="author-name">Aaron DeBenedetto</div>
             <div class="author-role">Mustard Growth Marketing</div>
@@ -1265,7 +1307,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"This guy is the best! I highly recommend him for anything related to GHL, Google Ads and Facebook Ads. I've never hired someone for work like this before but I was beyond impressed with his cooperation and knowledge! I look forward to many projects with him."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Ultimate-Shield.jpeg" alt="Cobin Heiland" />
+          <img class="author-avatar" src="images/testimonials/Ultimate_Shield.webp" alt="Cobin Heiland" />
           <div>
             <div class="author-name">Cobin Heiland</div>
             <div class="author-role">Ultimate Shield · Marketing Agency</div>
@@ -1277,7 +1319,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy truly impressed me with his intuitive understanding of how to build a successful paid campaign. He took the time to analyze our broader strategic objectives before jumping in, always offering his professional insights where he thought something could be improved. He then nurtured the new campaign hour by hour in its first week to ensure the highest ROI."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/karimah.jpeg" alt="Karimah Whitaker" />
+          <img class="author-avatar" src="images/testimonials/karimah.webp" alt="Karimah Whitaker" />
           <div>
             <div class="author-name">Karimah Whitaker</div>
             <div class="author-role">Gelcom · Marketing Agency</div>
@@ -1289,7 +1331,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy is not only extremely talented and professional but he has exceeded both expectations and duties for every job he's worked on for us. Mrinmoy truly goes the extra mile to ensure success. I will be using Mrinmoy for many new projects in the near future. I highly recommend Mrinmoy as a very competent and professional resource for your project."</p>
         <div class="testimonial-author">
-          <div class="author-avatar-placeholder">J</div>
+          <img class="author-avatar" src="images/testimonials/Orlando_Las_Vegas.webp" alt="Jeffrey Nahom" />
           <div>
             <div class="author-name">Jeffrey Nahom</div>
             <div class="author-role">Orlando Las Vegas · Tourism</div>
@@ -1301,7 +1343,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy is an exceptional talent and a very hard worker. Mrinmoy helped us optimize our GHL account and created a variety of automations for us as well! Great work! Highly recommend!"</p>
         <div class="testimonial-author">
-          <div class="author-avatar-placeholder">A</div>
+          <img class="author-avatar" src="images/testimonials/Brand_Clinic.webp" alt="Anthony El Chibani" />
           <div>
             <div class="author-name">Anthony El Chibani</div>
             <div class="author-role">Brand Clinic · Marketing Agency</div>
@@ -1313,7 +1355,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy did an exceptional job helping us create several Google Ads, Google Tag Manager, and Google Analytics accounts from scratch. His expertise was evident from the beginning, and he guided us through the setup process with ease."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="https://mrinmoysadiq.com/wp-content/uploads/2025/12/Life-in-Motion.jpeg" alt="Heather Frigaard" />
+          <img class="author-avatar" src="images/testimonials/Life_in_Motion.webp" alt="Heather Frigaard" />
           <div>
             <div class="author-name">Heather Frigaard</div>
             <div class="author-role">Life in Motion</div>
@@ -1342,7 +1384,7 @@ footer {
   <div class="container">
     <div class="about-inner">
       <div class="about-img-wrap">
-        <img src="https://mrinmoysadiq.com/wp-content/uploads/2025/11/IMG_7048-1.png" alt="Mrinmoy Sadiq" loading="lazy" />
+        <img src="images/mrinmoy_profile.webp" alt="Mrinmoy Sadiq" loading="lazy" />
         <div class="about-badge">5+ Years Experience</div>
       </div>
       <div class="about-text">
@@ -1363,6 +1405,77 @@ footer {
           <span class="skill-tag">Automation Workflows</span>
           <span class="skill-tag">CRO</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOL STACK ── -->
+<section id="tools" class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="section-label" data-animate>Tech Stack</div>
+    <h2 class="section-title" data-animate data-delay="1">Tools I Work With</h2>
+    <p class="section-sub" data-animate data-delay="2">From ad platforms to CRM automations and analytics — I use best-in-class tools to build, track, and scale every client acquisition system.</p>
+    <div class="tools-grid">
+      <div class="tool-card" data-animate>
+        <img src="images/tools/FB_Ads.webp" alt="Meta Ads" />
+        <div class="tool-name">Meta / Facebook Ads</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="1">
+        <img src="images/tools/GHL.webp" alt="GoHighLevel" />
+        <div class="tool-name">GoHighLevel</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="2">
+        <img src="images/tools/Google_Analytics.webp" alt="Google Analytics" />
+        <div class="tool-name">Google Analytics 4</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="3">
+        <img src="images/tools/Tag_manager_logo.webp" alt="Google Tag Manager" />
+        <div class="tool-name">Google Tag Manager</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="4">
+        <img src="images/tools/Google-Looker-Studio-Logo-Square-Insight-Platforms.webp" alt="Looker Studio" />
+        <div class="tool-name">Looker Studio</div>
+      </div>
+      <div class="tool-card" data-animate>
+        <img src="images/tools/Meta_Conversion_API.webp" alt="Meta Conversion API" />
+        <div class="tool-name">Meta Conversion API</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="1">
+        <img src="images/tools/Clickfunnel.webp" alt="ClickFunnels" />
+        <div class="tool-name">ClickFunnels</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="2">
+        <img src="images/tools/Systeme.io.webp" alt="Systeme.io" />
+        <div class="tool-name">Systeme.io</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="3">
+        <img src="images/tools/WordPress.webp" alt="WordPress" />
+        <div class="tool-name">WordPress</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="4">
+        <img src="images/tools/HubSpot.webp" alt="HubSpot" />
+        <div class="tool-name">HubSpot</div>
+      </div>
+      <div class="tool-card" data-animate>
+        <img src="images/tools/Zappier.webp" alt="Zapier" />
+        <div class="tool-name">Zapier</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="1">
+        <img src="images/tools/callrail-CTA.webp" alt="CallRail" />
+        <div class="tool-name">CallRail</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="2">
+        <img src="images/tools/Microsoft_Clarity.webp" alt="Microsoft Clarity" />
+        <div class="tool-name">Microsoft Clarity</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="3">
+        <img src="images/tools/Hotjar.svg" alt="Hotjar" />
+        <div class="tool-name">Hotjar</div>
+      </div>
+      <div class="tool-card" data-animate data-delay="4">
+        <img src="images/tools/unbounce.svg" alt="Unbounce" />
+        <div class="tool-name">Unbounce</div>
       </div>
     </div>
   </div>
