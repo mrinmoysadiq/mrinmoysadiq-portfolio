@@ -90,14 +90,8 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   display: flex; align-items: center; justify-content: space-between; width: 100%;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo .logo-mark {
-  width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
-  background: linear-gradient(135deg, var(--purple) 0%, var(--purple-lt) 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 15px; font-weight: 900; color: #fff; letter-spacing: -.02em;
-}
 .nav-logo .logo-name {
-  font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -.01em;
+  font-size: 17px; font-weight: 800; color: var(--text); letter-spacing: -.02em;
   line-height: 1.2;
 }
 .nav-logo .logo-name span { color: var(--lime); }
@@ -130,6 +124,69 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   background: radial-gradient(ellipse at 50% 30%, rgba(108,78,242,.22) 0%, transparent 70%);
   pointer-events: none;
 }
+/* ── Hero floating shapes ─────────────────────────── */
+.hero-shapes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: shapeEntry 1.2s cubic-bezier(.23,1,.32,1) forwards, shapeFloat 12s ease-in-out infinite;
+}
+@keyframes shapeEntry {
+  from { opacity: 0; transform: translateY(-80px) rotate(var(--rot,0deg)); }
+  to   { opacity: var(--op, .15); transform: translateY(0px) rotate(var(--rot,0deg)); }
+}
+@keyframes shapeFloat {
+  0%,100% { transform: translateY(0px) rotate(var(--rot,0deg)); }
+  50%     { transform: translateY(18px) rotate(var(--rot,0deg)); }
+}
+.hero-shape:nth-child(1) {
+  width: 320px; height: 88px;
+  background: linear-gradient(135deg, rgba(108,78,242,.7) 0%, rgba(139,111,247,.4) 100%);
+  top: 12%; left: 4%;
+  --rot: -30deg; --op: .18;
+  animation-delay: 0s, 0s;
+  animation-duration: 1.2s, 14s;
+  filter: blur(1px);
+}
+.hero-shape:nth-child(2) {
+  width: 240px; height: 68px;
+  background: linear-gradient(135deg, rgba(182,239,69,.6) 0%, rgba(108,78,242,.5) 100%);
+  top: 22%; right: 3%;
+  --rot: 20deg; --op: .14;
+  animation-delay: .15s, .15s;
+  animation-duration: 1.4s, 11s;
+  filter: blur(1px);
+}
+.hero-shape:nth-child(3) {
+  width: 200px; height: 56px;
+  background: linear-gradient(135deg, rgba(139,111,247,.65) 0%, rgba(182,239,69,.4) 100%);
+  top: 62%; left: 2%;
+  --rot: 15deg; --op: .16;
+  animation-delay: .3s, .3s;
+  animation-duration: 1.3s, 16s;
+  filter: blur(1px);
+}
+.hero-shape:nth-child(4) {
+  width: 280px; height: 78px;
+  background: linear-gradient(135deg, rgba(108,78,242,.55) 0%, rgba(70,40,180,.5) 100%);
+  bottom: 14%; right: 6%;
+  --rot: -22deg; --op: .2;
+  animation-delay: .45s, .45s;
+  animation-duration: 1.5s, 13s;
+  filter: blur(1px);
+}
+.hero-shape:nth-child(5) {
+  width: 160px; height: 46px;
+  background: linear-gradient(135deg, rgba(182,239,69,.5) 0%, rgba(108,78,242,.6) 100%);
+  top: 42%; right: 18%;
+  --rot: 30deg; --op: .12;
+  animation-delay: .6s, .6s;
+  animation-duration: 1.2s, 10s;
+  filter: blur(1px);
+}
+/* ensure hero content sits above shapes */
+.hero-inner { position: relative; z-index: 1; }
 .hero-inner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
   align-items: center; padding: 80px 0;
@@ -662,7 +719,6 @@ footer {
 <nav id="nav">
   <div class="container">
     <a class="nav-logo" href="#hero">
-      <div class="logo-mark">MS</div>
       <div class="logo-name">Mrinmoy <span>Sadiq</span></div>
     </a>
     <ul class="nav-links">
@@ -712,6 +768,13 @@ footer {
 <!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-glow"></div>
+  <div class="hero-shapes">
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+  </div>
   <div class="container">
     <div class="hero-inner">
       <div class="hero-content">
