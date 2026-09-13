@@ -315,6 +315,38 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 .ai-flow-stats .num { font-size: 26px; font-weight: 800; letter-spacing: -.02em; color: var(--text); }
 .ai-flow-stats .lbl { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
+/* ── Appointment Proof (dashboards) ───────────────── */
+.proof-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+  margin-top: 48px;
+}
+.proof-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+  transition: transform .25s, border-color .25s;
+  display: flex; flex-direction: column;
+}
+.proof-card:hover { transform: translateY(-6px); border-color: rgba(182,239,69,.35); }
+.proof-card img { width: 100%; display: block; }
+.proof-card .proof-highlight {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  padding: 20px 22px; border-top: 1px solid var(--border);
+}
+.proof-card .proof-highlight .num {
+  font-size: 24px; font-weight: 800; letter-spacing: -.02em; color: var(--lime);
+}
+.proof-card .proof-highlight .lbl { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+.proof-callout {
+  margin-top: 32px; display: flex; align-items: center; gap: 16px;
+  background: linear-gradient(135deg, rgba(108,78,242,.12), rgba(182,239,69,.08));
+  border: 1px solid rgba(108,78,242,.3); border-radius: var(--radius);
+  padding: 20px 24px;
+}
+.proof-callout .proof-callout-icon { font-size: 26px; line-height: 1; flex-shrink: 0; }
+.proof-callout p { font-size: 15px; color: var(--text); line-height: 1.6; margin: 0; }
+.proof-callout strong { color: var(--lime); }
+
 /* ── Portfolio grid (images) ──────────────────────── */
 .portfolio-grid {
   display: grid;
@@ -719,6 +751,8 @@ footer {
   .ai-flow { grid-template-columns: 1fr; }
   .ai-flow-arrow { transform: rotate(90deg); }
   .ai-flow-stats { gap: 24px; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-callout { flex-direction: column; align-items: flex-start; text-align: left; }
 
   /* portfolio grids become horizontal scrollers on mobile */
   .portfolio-grid {
@@ -822,7 +856,7 @@ footer {
       <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          Top-Rated on Upwork · 5+ Years Experience
+          Upwork Top Rated Plus (Top 3%) · 5+ Years Experience
         </div>
         <h1 class="hero-title">
           Paid Ads to <span class="accent">Booked Appointments</span>, Powered by AI.
@@ -837,6 +871,10 @@ footer {
           <a class="btn btn-outline" href="#campaigns">View My Work</a>
         </div>
         <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num">Top 3%</div>
+            <div class="lbl">Upwork Top Rated Plus</div>
+          </div>
           <div class="hero-stat">
             <div class="num">100+</div>
             <div class="lbl">Service Businesses</div>
@@ -1207,6 +1245,39 @@ footer {
         <div class="num">0</div>
         <div class="lbl">Manual Follow-Ups Needed</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── APPOINTMENT PROOF (dashboards) ── -->
+<section id="appointment-proof" class="section">
+  <div class="container">
+    <div class="section-label" data-animate>Tracked From Ad Click to Closed Deal</div>
+    <h2 class="section-title" data-animate data-delay="1">I'm Measured on Appointments, Not Just Leads</h2>
+    <p class="section-sub" data-animate data-delay="2">Anyone can report a lead count. I set up full-funnel tracking so every dollar is measured against what actually matters to your business: booked appointments and closed deals.</p>
+
+    <div class="proof-grid">
+      <div class="proof-card" onclick="openLightbox(this)" data-src="images/results/Meta_Ads_Leads_to_Appointment_Ratio.png" data-caption="Meta Ads Dashboard – Leads to Appointment Ratio">
+        <img src="images/results/Meta_Ads_Leads_to_Appointment_Ratio.png" alt="Meta Ads dashboard showing leads to appointment ratio" loading="lazy" />
+        <div class="proof-highlight">
+          <div><div class="num">33.3%</div><div class="lbl">Leads to Appointment Ratio</div></div>
+          <div><div class="num">$32.54</div><div class="lbl">Cost per Appointment</div></div>
+          <div><div class="num">21</div><div class="lbl">Appointments Scheduled</div></div>
+        </div>
+      </div>
+      <div class="proof-card" onclick="openLightbox(this)" data-src="images/results/Google_Ads_Campaign_Conversions_Funnel.webp" data-caption="Google Ads Dashboard – Full Funnel to Closed Won">
+        <img src="images/results/Google_Ads_Campaign_Conversions_Funnel.webp" alt="Google Ads dashboard showing conversion funnel from leads to closed won" loading="lazy" />
+        <div class="proof-highlight">
+          <div><div class="num">49.97</div><div class="lbl">New Leads</div></div>
+          <div><div class="num">11.65</div><div class="lbl">Sales Qualified Leads</div></div>
+          <div><div class="num">4.00</div><div class="lbl">Closed Won</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proof-callout">
+      <div class="proof-callout-icon">🎯</div>
+      <p>This is what "done for you" actually means: <strong>every campaign is wired to track leads all the way through to appointments and closed revenue</strong>, so you always know exactly what your ad spend is producing, not just how many clicks it got.</p>
     </div>
   </div>
 </section>
