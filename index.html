@@ -519,6 +519,19 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 .video-card iframe {
   width: 100%; aspect-ratio: 16/9; display: block; border: none;
 }
+.videos-grid-vertical {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.videos-grid-vertical .video-card iframe {
+  aspect-ratio: 9/16;
+}
+@media (max-width: 900px) {
+  .videos-grid-vertical { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .videos-grid-vertical { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* ── Testimonials ─────────────────────────────────── */
 .testimonials-grid {
@@ -1468,10 +1481,10 @@ footer {
 <section id="video-creatives" class="section">
   <div class="container">
     <div class="section-label" data-animate>Video Ad Creatives</div>
-    <h2 class="section-title" data-animate data-delay="1">Video Ads That Stop the Scroll</h2>
-    <p class="section-sub" data-animate data-delay="2">Short-form video creative built for feed and story placements.</p>
+    <h2 class="section-title" data-animate data-delay="1">Video Ad Samples</h2>
+    <p class="section-sub" data-animate data-delay="2">A few video ad samples I've put together, alongside the graphic creatives above.</p>
 
-    <div class="videos-grid" style="margin-top: 40px;">
+    <div class="videos-grid-vertical" style="margin-top: 40px;">
       <div class="video-card">
         <iframe
           src="https://drive.google.com/file/d/1iXdCT2rUdsdGXgZHe6crGdZeqe5sJnMD/preview"
