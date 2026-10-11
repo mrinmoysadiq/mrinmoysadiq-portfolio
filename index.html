@@ -423,16 +423,18 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   user-select: none;
 }
 
-/* ── Ad Creatives grid ────────────────────────────── */
-.creatives-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 12px;
+/* ── Ad Creatives masonry ─────────────────────────── */
+.creatives-masonry {
+  columns: 4 240px;
+  column-gap: 16px;
 }
 .creative-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
   border-radius: var(--radius); overflow: hidden; cursor: pointer;
   background: var(--surface); border: 1px solid var(--border);
   transition: transform .25s, box-shadow .25s;
+  display: block;
 }
 .creative-item:hover {
   transform: translateY(-4px);
@@ -440,10 +442,14 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   border-color: #d5d5cf;
 }
 .creative-item img {
-  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  width: 100%; height: auto; display: block;
   transition: transform .4s;
 }
-.creative-item:hover img { transform: scale(1.05); }
+.creative-item:hover img { transform: scale(1.04); }
+@media (max-width: 680px) {
+  .creatives-masonry { columns: 2 150px; column-gap: 12px; }
+  .creative-item { margin-bottom: 12px; }
+}
 
 /* ── Videos ───────────────────────────────────────── */
 .videos-grid {
@@ -456,19 +462,6 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 }
 .video-card iframe {
   width: 100%; aspect-ratio: 16/9; display: block; border: none;
-}
-.videos-grid-vertical {
-  display: grid; grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
-.videos-grid-vertical .video-card iframe {
-  aspect-ratio: 9/16;
-}
-@media (max-width: 900px) {
-  .videos-grid-vertical { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 600px) {
-  .videos-grid-vertical { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Testimonials ─────────────────────────────────── */
@@ -708,20 +701,6 @@ footer {
   .portfolio-grid::-webkit-scrollbar { display: none; }
   .portfolio-grid .portfolio-item {
     flex: 0 0 72vw; max-width: 300px;
-    scroll-snap-align: start;
-  }
-
-  /* creatives grid horizontal on mobile */
-  .creatives-grid {
-    display: flex; flex-direction: row;
-    overflow-x: auto; scroll-snap-type: x mandatory;
-    gap: 10px; padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .creatives-grid::-webkit-scrollbar { display: none; }
-  .creatives-grid .creative-item {
-    flex: 0 0 44vw; max-width: 200px;
     scroll-snap-align: start;
   }
 }
@@ -1315,138 +1294,50 @@ footer {
   <div class="container">
     <div class="section-label" data-animate>Ad Creatives</div>
     <h2 class="section-title" data-animate data-delay="1">Creatives That Convert</h2>
-    <p class="section-sub" data-animate data-delay="2">Copy, visuals, and hooks tailored to each niche and buyer persona.</p>
+    <p class="section-sub" data-animate data-delay="2">Scroll-stopping ad creatives tailored to each niche and buyer persona, designed to grab attention and drive action.</p>
 
-    <div class="scroll-wrapper" style="margin-top: 40px;">
-    <div class="scroll-arrows">
-      <button class="scroll-arrow" onclick="scrollGallery('grid-creatives',-1)">&#8592;</button>
-      <button class="scroll-arrow" onclick="scrollGallery('grid-creatives', 1)">&#8594;</button>
-    </div>
-    <div class="creatives-grid" id="grid-creatives" data-gallery="creatives">
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/AC_1.webp" data-caption="Ad Creative – AC 1">
-        <img src="images/creatives/AC_1.webp" alt="Ad Creative AC 1" loading="lazy" />
+    <div class="creatives-masonry" id="grid-creatives" data-gallery="creatives" style="margin-top: 40px;" data-animate data-delay="2">
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_1.jpg" data-caption="Beauty & Aesthetics Ad Creative">
+        <img src="images/creatives/new_creative_1.jpg" alt="Beauty Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/AC_2.webp" data-caption="Ad Creative – AC 2">
-        <img src="images/creatives/AC_2.webp" alt="Ad Creative AC 2" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_2.jpg" data-caption="Date Night Ad Creative">
+        <img src="images/creatives/new_creative_2.jpg" alt="Date Night Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ADS_3_f2.webp" data-caption="Ad Creative 3">
-        <img src="images/creatives/ADS_3_f2.webp" alt="Ad Creative 3" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/AC_1.webp" data-caption="Ad Creative">
+        <img src="images/creatives/AC_1.webp" alt="Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ad_1.webp" data-caption="Ad Creative – Variation 1">
-        <img src="images/creatives/ad_1.webp" alt="Ad Creative Variation 1" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_3.jpg" data-caption="Luxury Beauty Portrait Ad Creative">
+        <img src="images/creatives/new_creative_3.jpg" alt="Luxury Beauty Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_1.webp" data-caption="Ad Creative – Ads 1">
-        <img src="images/creatives/ads_1.webp" alt="Ad Creative Ads 1" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_8.jpg" data-caption="Ad Creative">
+        <img src="images/creatives/new_creative_8.jpg" alt="Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_1_f.webp" data-caption="Ad Creative – Ads 1 Final">
-        <img src="images/creatives/ads_1_f.webp" alt="Ad Creative Ads 1 Final" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_9.jpg" data-caption="Ad Creative">
+        <img src="images/creatives/new_creative_9.jpg" alt="Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_1_image_1_f.webp" data-caption="Ad Creative – Image 1 Final">
-        <img src="images/creatives/ads_1_image_1_f.webp" alt="Ad Creative Image 1 Final" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/Celebrity.webp" data-caption="Celebrity Ad Creative">
+        <img src="images/creatives/Celebrity.webp" alt="Celebrity Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_1_image_3_f.webp" data-caption="Ad Creative – Image 3 Final">
-        <img src="images/creatives/ads_1_image_3_f.webp" alt="Ad Creative Image 3 Final" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_4.jpg" data-caption="Infographic Ad Creative">
+        <img src="images/creatives/new_creative_4.jpg" alt="Infographic Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_2.webp" data-caption="Ad Creative – Ads 2">
-        <img src="images/creatives/ads_2.webp" alt="Ad Creative Ads 2" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_6.jpg" data-caption="Breaking News Style Ad Creative">
+        <img src="images/creatives/new_creative_6.jpg" alt="Breaking News Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_2__1.webp" data-caption="Ad Creative – Ads 2 Variant">
-        <img src="images/creatives/ads_2__1.webp" alt="Ad Creative Ads 2 Variant" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_10.jpg" data-caption="Ad Creative">
+        <img src="images/creatives/new_creative_10.jpg" alt="Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_3.webp" data-caption="Ad Creative – Ads 3">
-        <img src="images/creatives/ads_3.webp" alt="Ad Creative Ads 3" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/AC_2.webp" data-caption="Ad Creative">
+        <img src="images/creatives/AC_2.webp" alt="Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ads_4_kf.webp" data-caption="Ad Creative – Ads 4">
-        <img src="images/creatives/ads_4_kf.webp" alt="Ad Creative Ads 4" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_5.jpg" data-caption="High-End Beauty Campaign Ad Creative">
+        <img src="images/creatives/new_creative_5.jpg" alt="Beauty Campaign Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/Ads_5.webp" data-caption="Ad Creative – Ads 5">
-        <img src="images/creatives/Ads_5.webp" alt="Ad Creative Ads 5" loading="lazy" />
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_7.jpg" data-caption="BOFU Ad Creative">
+        <img src="images/creatives/new_creative_7.jpg" alt="BOFU Ad Creative" loading="lazy" />
       </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/adimage1.webp" data-caption="Ad Creative – Image 1">
-        <img src="images/creatives/adimage1.webp" alt="Ad Creative Image 1" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/ad_image2I.webp" data-caption="Ad Creative – Image 2">
-        <img src="images/creatives/ad_image2I.webp" alt="Ad Creative Image 2" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/Celebrity.webp" data-caption="Ad Creative – Celebrity">
-        <img src="images/creatives/Celebrity.webp" alt="Ad Creative Celebrity" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/FC_1.webp" data-caption="Ad Creative – FC 1">
-        <img src="images/creatives/FC_1.webp" alt="Ad Creative FC 1" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/EZ_1.webp" data-caption="EZ – Ad Creative 1">
-        <img src="images/creatives/EZ_1.webp" alt="EZ Creative 1" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/EZ_3.webp" data-caption="EZ – Ad Creative 3">
-        <img src="images/creatives/EZ_3.webp" alt="EZ Creative 3" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/EZ_4.webp" data-caption="EZ – Ad Creative 4">
-        <img src="images/creatives/EZ_4.webp" alt="EZ Creative 4" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/EZ_5.webp" data-caption="EZ – Ad Creative 5">
-        <img src="images/creatives/EZ_5.webp" alt="EZ Creative 5" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/dr_cooling_AC_ads_1.webp" data-caption="Dr Cooling – AC Ad Creative 1">
-        <img src="images/creatives/dr_cooling_AC_ads_1.webp" alt="Dr Cooling Ad Creative 1" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/dr_cooling_AC_ads_5.webp" data-caption="Dr Cooling – AC Ad Creative 5">
-        <img src="images/creatives/dr_cooling_AC_ads_5.webp" alt="Dr Cooling Ad Creative 5" loading="lazy" />
-      </div>
-      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/Home_Insurance_3.webp" data-caption="Home Insurance – Ad Creative">
-        <img src="images/creatives/Home_Insurance_3.webp" alt="Home Insurance Creative" loading="lazy" />
-      </div>
-    </div>
-    </div><!-- /scroll-wrapper -->
-  </div>
-</section>
-
-<!-- ── VIDEO AD CREATIVES ── -->
-<section id="video-creatives" class="section">
-  <div class="container">
-    <div class="section-label" data-animate>Video Ad Creatives</div>
-    <h2 class="section-title" data-animate data-delay="1">Video Ad Samples</h2>
-    <p class="section-sub" data-animate data-delay="2">A few video ad samples I've put together, alongside the graphic creatives above.</p>
-
-    <div class="videos-grid-vertical" style="margin-top: 40px;">
-      <div class="video-card">
-        <iframe
-          src="https://drive.google.com/file/d/1iXdCT2rUdsdGXgZHe6crGdZeqe5sJnMD/preview"
-          title="Video Ad Creative 1"
-          allow="autoplay"
-          allowfullscreen loading="lazy">
-        </iframe>
-      </div>
-      <div class="video-card">
-        <iframe
-          src="https://drive.google.com/file/d/1FaPCNQBnIPsmlQSdi8Y28ZaiFyiyqRDp/preview"
-          title="Video Ad Creative 2"
-          allow="autoplay"
-          allowfullscreen loading="lazy">
-        </iframe>
-      </div>
-      <div class="video-card">
-        <iframe
-          src="https://drive.google.com/file/d/1KIFDspxiOFD_U_JU5tihOTzo8_U9iM7I/preview"
-          title="Video Ad Creative 3"
-          allow="autoplay"
-          allowfullscreen loading="lazy">
-        </iframe>
-      </div>
-      <div class="video-card">
-        <iframe
-          src="https://drive.google.com/file/d/1nRAhnDBJVyG6HHxF-t_YDkEPIt9JtYOg/preview"
-          title="Video Ad Creative 4"
-          allow="autoplay"
-          allowfullscreen loading="lazy">
-        </iframe>
-      </div>
-      <div class="video-card">
-        <iframe
-          src="https://drive.google.com/file/d/1rVPgB1JUkU3ufih-gdC8Ni1lw4ffzpJE/preview"
-          title="Video Ad Creative 5"
-          allow="autoplay"
-          allowfullscreen loading="lazy">
-        </iframe>
+      <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_11.jpg" data-caption="Ad Creative">
+        <img src="images/creatives/new_creative_11.jpg" alt="Ad Creative" loading="lazy" />
       </div>
     </div>
   </div>
