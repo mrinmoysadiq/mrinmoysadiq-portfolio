@@ -463,6 +463,16 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
 .video-card iframe {
   width: 100%; aspect-ratio: 16/9; display: block; border: none;
 }
+.yt-facade {
+  position: relative; display: block; width: 100%; aspect-ratio: 16/9;
+  padding: 0; border: none; background: #000; cursor: pointer; overflow: hidden;
+}
+.yt-facade img { width: 100%; height: 100%; object-fit: cover; }
+.yt-play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+}
+.yt-play svg { width: 68px; height: 48px; opacity: .9; transition: opacity .2s; }
+.yt-facade:hover .yt-play svg { opacity: 1; }
 
 /* ── Testimonials ─────────────────────────────────── */
 .testimonials-grid {
@@ -806,7 +816,7 @@ footer {
       </div>
       <div class="hero-visual">
         <div class="hero-img-wrap">
-          <img src="images/hero_upwork.webp" alt="Portfolio preview" loading="eager" />
+          <img decoding="async" width="1200" height="978" src="images/hero_upwork.webp" alt="Portfolio preview" loading="eager" fetchpriority="high" />
           <div class="hero-badge-float">
             <div class="icon">⭐</div>
             <div class="info">
@@ -823,43 +833,43 @@ footer {
 <!-- ── TRUSTED BY ── -->
 <section id="clients">
   <div class="marquee-track" id="marqueeTrack">
-    <img src="images/logos/Point-22.webp" alt="Point 22" />
-    <img src="images/logos/Anywhere_Advisors.webp" alt="Anywhere Advisors" />
-    <img src="images/logos/Brand_Clinic.webp" alt="Brand Clinic" />
-    <img src="images/logos/Guac_Digital.webp" alt="Guac Digital" />
-    <img src="images/logos/BnB_Boost.webp" alt="BnB Boost" />
-    <img src="images/logos/Proxel_Solutions.webp" alt="Proxel Solutions" />
-    <img src="images/logos/The-Core-Room-Gold-logo.webp" alt="The Core Room" />
-    <img src="images/logos/mustard_growth.webp" alt="Mustard Growth" />
-    <img src="images/logos/ultimateshield.webp" alt="Ultimate Shield" />
-    <img src="images/logos/Creative_Vission.webp" alt="Creative Vission" />
-    <img src="images/logos/Elder_Answers.webp" alt="Elder Answers" />
-    <img src="images/logos/John_Mollura.webp" alt="John Mollura" />
-    <img src="images/logos/OLV.webp" alt="OLV" />
-    <img src="images/logos/Skyeai.avif" alt="Skye AI" />
-    <img src="images/logos/Optrex_AI_Logo_Icon.avif" alt="Optrex AI" />
-    <img src="images/logos/HD-Transparent-Logo-e1567409676903.webp" alt="Client" />
-    <img src="images/logos/LIM-Marketing.svg" alt="LIM Marketing" />
-    <img src="images/logos/Nonas_Home_Care.svg" alt="Nona's Home Care" />
+    <img decoding="async" width="379" height="124" src="images/logos/Point-22.webp" alt="Point 22" />
+    <img decoding="async" width="320" height="96" src="images/logos/Anywhere_Advisors.webp" alt="Anywhere Advisors" />
+    <img decoding="async" width="447" height="100" src="images/logos/Brand_Clinic.webp" alt="Brand Clinic" />
+    <img decoding="async" width="226" height="96" src="images/logos/Guac_Digital.webp" alt="Guac Digital" />
+    <img decoding="async" width="950" height="208" src="images/logos/BnB_Boost.webp" alt="BnB Boost" />
+    <img decoding="async" width="198" height="96" src="images/logos/Proxel_Solutions.webp" alt="Proxel Solutions" />
+    <img decoding="async" width="126" height="96" src="images/logos/The-Core-Room-Gold-logo.webp" alt="The Core Room" />
+    <img decoding="async" width="96" height="96" src="images/logos/mustard_growth.webp" alt="Mustard Growth" />
+    <img decoding="async" width="96" height="96" src="images/logos/ultimateshield.webp" alt="Ultimate Shield" />
+    <img decoding="async" width="366" height="96" src="images/logos/Creative_Vission.webp" alt="Creative Vission" />
+    <img decoding="async" width="244" height="47" src="images/logos/Elder_Answers.webp" alt="Elder Answers" />
+    <img decoding="async" width="348" height="96" src="images/logos/John_Mollura.webp" alt="John Mollura" />
+    <img decoding="async" width="438" height="103" src="images/logos/OLV.webp" alt="OLV" />
+    <img decoding="async" width="512" height="122" src="images/logos/Skyeai.avif" alt="Skye AI" />
+    <img decoding="async" width="242" height="178" src="images/logos/Optrex_AI_Logo_Icon.avif" alt="Optrex AI" />
+    <img decoding="async" width="611" height="163" src="images/logos/HD-Transparent-Logo-e1567409676903.webp" alt="Client" />
+    <img decoding="async" src="images/logos/LIM-Marketing.svg" alt="LIM Marketing" />
+    <img decoding="async" src="images/logos/Nonas_Home_Care.svg" alt="Nona's Home Care" />
     <!-- duplicate for seamless loop -->
-    <img src="images/logos/Point-22.webp" alt="Point 22" />
-    <img src="images/logos/Anywhere_Advisors.webp" alt="Anywhere Advisors" />
-    <img src="images/logos/Brand_Clinic.webp" alt="Brand Clinic" />
-    <img src="images/logos/Guac_Digital.webp" alt="Guac Digital" />
-    <img src="images/logos/BnB_Boost.webp" alt="BnB Boost" />
-    <img src="images/logos/Proxel_Solutions.webp" alt="Proxel Solutions" />
-    <img src="images/logos/The-Core-Room-Gold-logo.webp" alt="The Core Room" />
-    <img src="images/logos/mustard_growth.webp" alt="Mustard Growth" />
-    <img src="images/logos/ultimateshield.webp" alt="Ultimate Shield" />
-    <img src="images/logos/Creative_Vission.webp" alt="Creative Vission" />
-    <img src="images/logos/Elder_Answers.webp" alt="Elder Answers" />
-    <img src="images/logos/John_Mollura.webp" alt="John Mollura" />
-    <img src="images/logos/OLV.webp" alt="OLV" />
-    <img src="images/logos/Skyeai.avif" alt="Skye AI" />
-    <img src="images/logos/Optrex_AI_Logo_Icon.avif" alt="Optrex AI" />
-    <img src="images/logos/HD-Transparent-Logo-e1567409676903.webp" alt="Client" />
-    <img src="images/logos/LIM-Marketing.svg" alt="LIM Marketing" />
-    <img src="images/logos/Nonas_Home_Care.svg" alt="Nona's Home Care" />
+    <img decoding="async" width="379" height="124" src="images/logos/Point-22.webp" alt="Point 22" />
+    <img decoding="async" width="320" height="96" src="images/logos/Anywhere_Advisors.webp" alt="Anywhere Advisors" />
+    <img decoding="async" width="447" height="100" src="images/logos/Brand_Clinic.webp" alt="Brand Clinic" />
+    <img decoding="async" width="226" height="96" src="images/logos/Guac_Digital.webp" alt="Guac Digital" />
+    <img decoding="async" width="950" height="208" src="images/logos/BnB_Boost.webp" alt="BnB Boost" />
+    <img decoding="async" width="198" height="96" src="images/logos/Proxel_Solutions.webp" alt="Proxel Solutions" />
+    <img decoding="async" width="126" height="96" src="images/logos/The-Core-Room-Gold-logo.webp" alt="The Core Room" />
+    <img decoding="async" width="96" height="96" src="images/logos/mustard_growth.webp" alt="Mustard Growth" />
+    <img decoding="async" width="96" height="96" src="images/logos/ultimateshield.webp" alt="Ultimate Shield" />
+    <img decoding="async" width="366" height="96" src="images/logos/Creative_Vission.webp" alt="Creative Vission" />
+    <img decoding="async" width="244" height="47" src="images/logos/Elder_Answers.webp" alt="Elder Answers" />
+    <img decoding="async" width="348" height="96" src="images/logos/John_Mollura.webp" alt="John Mollura" />
+    <img decoding="async" width="438" height="103" src="images/logos/OLV.webp" alt="OLV" />
+    <img decoding="async" width="512" height="122" src="images/logos/Skyeai.avif" alt="Skye AI" />
+    <img decoding="async" width="242" height="178" src="images/logos/Optrex_AI_Logo_Icon.avif" alt="Optrex AI" />
+    <img decoding="async" width="611" height="163" src="images/logos/HD-Transparent-Logo-e1567409676903.webp" alt="Client" />
+    <img decoding="async" src="images/logos/LIM-Marketing.svg" alt="LIM Marketing" />
+    <img decoding="async" src="images/logos/Nonas_Home_Care.svg" alt="Nona's Home Care" />
   </div>
 </section>
 
@@ -886,67 +896,67 @@ footer {
         </div>
         <div class="portfolio-grid" id="grid-fb" data-gallery="fb">
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/Facebook_Ads_for_Remodeling_Company.webp" data-caption="Facebook Ads – Remodeling Company">
-            <img src="images/fb-ads/Facebook_Ads_for_Remodeling_Company.webp" alt="Facebook Ads Remodeling Company" loading="lazy" />
+            <img decoding="async" width="800" height="463" src="images/thumbs/fb-ads/Facebook_Ads_for_Remodeling_Company.webp" alt="Facebook Ads Remodeling Company" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Remodeling Company</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Tree_Service_Business.webp" data-caption="Facebook Ads – Tree Service Business">
-            <img src="images/fb-ads/FB_Ads_Tree_Service_Business.webp" alt="Facebook Ads Tree Service" loading="lazy" />
+            <img decoding="async" width="800" height="460" src="images/thumbs/fb-ads/FB_Ads_Tree_Service_Business.webp" alt="Facebook Ads Tree Service" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Tree Service Business</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Design_and_Remodel.webp" data-caption="Facebook Ads – Design & Remodel">
-            <img src="images/fb-ads/FB_Ads_Design_and_Remodel.webp" alt="Facebook Ads Design Remodel" loading="lazy" />
+            <img decoding="async" width="800" height="357" src="images/thumbs/fb-ads/FB_Ads_Design_and_Remodel.webp" alt="Facebook Ads Design Remodel" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Design & Remodel</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Mens_Health_Clinic.webp" data-caption="Facebook Ads – Men's Health Clinic">
-            <img src="images/fb-ads/FB_Ads_Mens_Health_Clinic.webp" alt="Facebook Ads Mens Health Clinic" loading="lazy" />
+            <img decoding="async" width="800" height="402" src="images/thumbs/fb-ads/FB_Ads_Mens_Health_Clinic.webp" alt="Facebook Ads Mens Health Clinic" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Men's Health Clinic</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Business_Funding_Company.webp" data-caption="Facebook Ads – Business Funding Company">
-            <img src="images/fb-ads/FB_Ads_Business_Funding_Company.webp" alt="Facebook Ads Business Funding" loading="lazy" />
+            <img decoding="async" width="800" height="375" src="images/thumbs/fb-ads/FB_Ads_Business_Funding_Company.webp" alt="Facebook Ads Business Funding" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Business Funding Company</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Flooring_Business.webp" data-caption="Facebook Ads – Flooring Business">
-            <img src="images/fb-ads/FB_Ads_Flooring_Business.webp" alt="Facebook Ads Flooring" loading="lazy" />
+            <img decoding="async" width="800" height="439" src="images/thumbs/fb-ads/FB_Ads_Flooring_Business.webp" alt="Facebook Ads Flooring" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Flooring Business</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Kitchen_and_Bath_remodel.webp" data-caption="Facebook Ads – Kitchen & Bath Remodel">
-            <img src="images/fb-ads/FB_Ads_Kitchen_and_Bath_remodel.webp" alt="Facebook Ads Kitchen Bath" loading="lazy" />
+            <img decoding="async" width="800" height="295" src="images/thumbs/fb-ads/FB_Ads_Kitchen_and_Bath_remodel.webp" alt="Facebook Ads Kitchen Bath" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Kitchen & Bath Remodel</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Kitchen_Bathroom_New_Campaign.webp" data-caption="Facebook Ads – Kitchen & Bathroom New Campaign">
-            <img src="images/fb-ads/FB_Ads_Kitchen_Bathroom_New_Campaign.webp" alt="Facebook Ads Kitchen Bathroom New Campaign" loading="lazy" />
+            <img decoding="async" width="800" height="291" src="images/thumbs/fb-ads/FB_Ads_Kitchen_Bathroom_New_Campaign.webp" alt="Facebook Ads Kitchen Bathroom New Campaign" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Kitchen & Bathroom New Campaign</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Tax_Business_Coach.webp" data-caption="Facebook Ads – Tax Business Coach">
-            <img src="images/fb-ads/FB_Ads_Tax_Business_Coach.webp" alt="Facebook Ads Tax Coach" loading="lazy" />
+            <img decoding="async" width="800" height="402" src="images/thumbs/fb-ads/FB_Ads_Tax_Business_Coach.webp" alt="Facebook Ads Tax Coach" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Tax Business Coach</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Campaign_For_Restaurant.webp" data-caption="Facebook Ads – Restaurant Campaign">
-            <img src="images/fb-ads/FB_Ads_Campaign_For_Restaurant.webp" alt="Facebook Ads Restaurant" loading="lazy" />
+            <img decoding="async" width="800" height="371" src="images/thumbs/fb-ads/FB_Ads_Campaign_For_Restaurant.webp" alt="Facebook Ads Restaurant" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Restaurant Campaign</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Auto_Details.webp" data-caption="Facebook Ads – Auto Detailing">
-            <img src="images/fb-ads/FB_Ads_Auto_Details.webp" alt="Facebook Ads Auto Detailing" loading="lazy" />
+            <img decoding="async" width="800" height="349" src="images/thumbs/fb-ads/FB_Ads_Auto_Details.webp" alt="Facebook Ads Auto Detailing" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Auto Detailing</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Local_Custom_Home_Builder.webp" data-caption="Facebook Ads – Local Custom Home Builder">
-            <img src="images/fb-ads/FB_Ads_Local_Custom_Home_Builder.webp" alt="Facebook Ads Local Home Builder" loading="lazy" />
+            <img decoding="async" width="800" height="346" src="images/thumbs/fb-ads/FB_Ads_Local_Custom_Home_Builder.webp" alt="Facebook Ads Local Home Builder" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Local Custom Home Builder</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/fb-ads/FB_Ads_Before_After.webp" data-caption="Before & After – Ad Campaign Result">
-            <img src="images/fb-ads/FB_Ads_Before_After.webp" alt="Before & After Campaign Result" loading="lazy" />
+            <img decoding="async" width="800" height="612" src="images/thumbs/fb-ads/FB_Ads_Before_After.webp" alt="Before & After Campaign Result" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Before & After Results</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
@@ -963,92 +973,92 @@ footer {
         </div>
         <div class="portfolio-grid" id="grid-google" data-gallery="google">
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Kitchen_Bathroom_Remodeling.webp" data-caption="Google Ads – Kitchen & Bathroom Remodeling">
-            <img src="images/google-ads/Google_Ads_Kitchen_Bathroom_Remodeling.webp" alt="Google Ads Kitchen Bathroom Remodeling" loading="lazy" />
+            <img decoding="async" width="800" height="322" src="images/thumbs/google-ads/Google_Ads_Kitchen_Bathroom_Remodeling.webp" alt="Google Ads Kitchen Bathroom Remodeling" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Kitchen & Bathroom Remodeling</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Before_After.webp" data-caption="Google Ads – Before & After Results">
-            <img src="images/google-ads/Google_Ads_Before_After.webp" alt="Google Ads Before After" loading="lazy" />
+            <img decoding="async" width="800" height="671" src="images/thumbs/google-ads/Google_Ads_Before_After.webp" alt="Google Ads Before After" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Before & After Results</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Before_After_Insurance.webp" data-caption="Google Ads – Before & After (Insurance)">
-            <img src="images/google-ads/Google_Ads_Before_After_Insurance.webp" alt="Google Ads Before After Insurance" loading="lazy" />
+            <img decoding="async" width="800" height="926" src="images/thumbs/google-ads/Google_Ads_Before_After_Insurance.webp" alt="Google Ads Before After Insurance" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Before & After – Insurance</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_ads-result_countertops.webp" data-caption="Google Ads – Countertop Installation">
-            <img src="images/google-ads/Google_ads-result_countertops.webp" alt="Google Ads Countertops" loading="lazy" />
+            <img decoding="async" width="800" height="482" src="images/thumbs/google-ads/Google_ads-result_countertops.webp" alt="Google Ads Countertops" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Countertop Installation</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_ads_Earwax.webp" data-caption="Google Ads – Earwax Clinic">
-            <img src="images/google-ads/Google_ads_Earwax.webp" alt="Google Ads Earwax Clinic" loading="lazy" />
+            <img decoding="async" width="800" height="482" src="images/thumbs/google-ads/Google_ads_Earwax.webp" alt="Google Ads Earwax Clinic" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Earwax Clinic</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_ads_result_landscaping.webp" data-caption="Google Ads – Landscaping Business">
-            <img src="images/google-ads/Google_ads_result_landscaping.webp" alt="Google Ads Landscaping" loading="lazy" />
+            <img decoding="async" width="800" height="470" src="images/thumbs/google-ads/Google_ads_result_landscaping.webp" alt="Google Ads Landscaping" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Landscaping Business</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_ads_results_health_insurance.webp" data-caption="Google Ads – Health Insurance">
-            <img src="images/google-ads/Google_ads_results_health_insurance.webp" alt="Google Ads Health Insurance" loading="lazy" />
+            <img decoding="async" width="800" height="472" src="images/thumbs/google-ads/Google_ads_results_health_insurance.webp" alt="Google Ads Health Insurance" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Health Insurance</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Form_Optimization.webp" data-caption="Google Ads – Conversion Rate via Form Optimization">
-            <img src="images/google-ads/Google_Ads_Form_Optimization.webp" alt="Google Ads Form Optimization" loading="lazy" />
+            <img decoding="async" width="800" height="800" src="images/thumbs/google-ads/Google_Ads_Form_Optimization.webp" alt="Google Ads Form Optimization" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Form Submission Optimization</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Conversion_Rate.webp" data-caption="Google Ads – Conversion Rate Improvement">
-            <img src="images/google-ads/Google_Ads_Conversion_Rate.webp" alt="Google Ads Conversion Rate" loading="lazy" />
+            <img decoding="async" width="800" height="600" src="images/thumbs/google-ads/Google_Ads_Conversion_Rate.webp" alt="Google Ads Conversion Rate" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Conversion Rate Improvement</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_conversion_tracking.webp" data-caption="Google Ads – Conversion Tracking Setup">
-            <img src="images/google-ads/Google_Ads_conversion_tracking.webp" alt="Google Ads Conversion Tracking" loading="lazy" />
+            <img decoding="async" width="800" height="465" src="images/thumbs/google-ads/Google_Ads_conversion_tracking.webp" alt="Google Ads Conversion Tracking" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Conversion Tracking Setup</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_ads_enhanced_conversion_tracking.webp" data-caption="Google Ads – Enhanced Conversion Tracking">
-            <img src="images/google-ads/Google_ads_enhanced_conversion_tracking.webp" alt="Google Ads Enhanced Conversion Tracking" loading="lazy" />
+            <img decoding="async" width="800" height="463" src="images/thumbs/google-ads/Google_ads_enhanced_conversion_tracking.webp" alt="Google Ads Enhanced Conversion Tracking" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Enhanced Conversion Tracking</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_analytics_4_setup.webp" data-caption="Google Analytics 4 Setup">
-            <img src="images/google-ads/Google_analytics_4_setup.webp" alt="Google Analytics 4 Setup" loading="lazy" />
+            <img decoding="async" width="800" height="480" src="images/thumbs/google-ads/Google_analytics_4_setup.webp" alt="Google Analytics 4 Setup" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Google Analytics 4 Setup</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Tag_Manager_Dashboard.webp" data-caption="Google Tag Manager Dashboard">
-            <img src="images/google-ads/Google_Tag_Manager_Dashboard.webp" alt="Google Tag Manager" loading="lazy" />
+            <img decoding="async" width="800" height="482" src="images/thumbs/google-ads/Google_Tag_Manager_Dashboard.webp" alt="Google Tag Manager" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Google Tag Manager</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Remarketing_Paikos.webp" data-caption="Google Ads – Remarketing Campaign">
-            <img src="images/google-ads/Google_Ads_Remarketing_Paikos.webp" alt="Google Ads Remarketing" loading="lazy" />
+            <img decoding="async" width="800" height="222" src="images/thumbs/google-ads/Google_Ads_Remarketing_Paikos.webp" alt="Google Ads Remarketing" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Remarketing Campaign</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Anwar.webp" data-caption="Google Ads – Client Result (Anwar)">
-            <img src="images/google-ads/Google_Ads_Anwar.webp" alt="Google Ads Anwar" loading="lazy" />
+            <img decoding="async" width="800" height="213" src="images/thumbs/google-ads/Google_Ads_Anwar.webp" alt="Google Ads Anwar" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Client Result – Anwar</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Faraz.webp" data-caption="Google Ads – Client Result (Faraz)">
-            <img src="images/google-ads/Google_Ads_Faraz.webp" alt="Google Ads Faraz" loading="lazy" />
+            <img decoding="async" width="800" height="261" src="images/thumbs/google-ads/Google_Ads_Faraz.webp" alt="Google Ads Faraz" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Client Result – Faraz</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Hannah_Increased_Conversions.webp" data-caption="Google Ads – Hannah: +39.13% Conversions">
-            <img src="images/google-ads/Google_Ads_Hannah_Increased_Conversions.webp" alt="Google Ads Hannah Conversions" loading="lazy" />
+            <img decoding="async" width="800" height="269" src="images/thumbs/google-ads/Google_Ads_Hannah_Increased_Conversions.webp" alt="Google Ads Hannah Conversions" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Hannah – +39.13% Conversions</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/google-ads/Google_Ads_Free_Audit.webp" data-caption="Google Ads – Free Audit Results">
-            <img src="images/google-ads/Google_Ads_Free_Audit.webp" alt="Google Ads Free Audit" loading="lazy" />
+            <img decoding="async" width="800" height="469" src="images/thumbs/google-ads/Google_Ads_Free_Audit.webp" alt="Google Ads Free Audit" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Free Audit Results</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
@@ -1065,51 +1075,51 @@ footer {
         </div>
         <div class="portfolio-grid" id="grid-ghl" data-gallery="ghl">
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/GoHighLevel_Automation-Lead_to_Appointment.webp" data-caption="GHL – Lead to Appointment Automation">
-            <img src="images/ghl/GoHighLevel_Automation-Lead_to_Appointment.webp" alt="GHL Lead to Appointment Automation" loading="lazy" />
+            <img decoding="async" width="800" height="666" src="images/thumbs/ghl/GoHighLevel_Automation-Lead_to_Appointment.webp" alt="GHL Lead to Appointment Automation" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Lead to Appointment Automation</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/GoHighLevel_Automation.webp" data-caption="GHL – Automation Workflow">
-            <img src="images/ghl/GoHighLevel_Automation.webp" alt="GHL Automation Workflow" loading="lazy" />
+            <img decoding="async" width="800" height="431" src="images/thumbs/ghl/GoHighLevel_Automation.webp" alt="GHL Automation Workflow" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Automation Workflow</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/GoHighLevel_Dashboard.webp" data-caption="GHL – Custom Dashboard">
-            <img src="images/ghl/GoHighLevel_Dashboard.webp" alt="GHL Dashboard" loading="lazy" />
+            <img decoding="async" width="800" height="459" src="images/thumbs/ghl/GoHighLevel_Dashboard.webp" alt="GHL Dashboard" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Custom Dashboard</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/GoHighLevel_Dynamic_location_changes.webp" data-caption="GHL – Dynamic Location Insertion">
-            <img src="images/ghl/GoHighLevel_Dynamic_location_changes.webp" alt="GHL Dynamic Location" loading="lazy" />
+            <img decoding="async" width="800" height="462" src="images/thumbs/ghl/GoHighLevel_Dynamic_location_changes.webp" alt="GHL Dynamic Location" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Dynamic Location Insertion</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/GoHighLevel_Inbound_Webhok.webp" data-caption="GHL – Inbound Webhook Integration">
-            <img src="images/ghl/GoHighLevel_Inbound_Webhok.webp" alt="GHL Webhook" loading="lazy" />
+            <img decoding="async" width="800" height="457" src="images/thumbs/ghl/GoHighLevel_Inbound_Webhok.webp" alt="GHL Webhook" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Inbound Webhook Integration</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/GHL_Meta_Ads_Offline_Tracking.webp" data-caption="GHL – Meta Ads Offline Conversion Tracking">
-            <img src="images/ghl/GHL_Meta_Ads_Offline_Tracking.webp" alt="GHL Meta Offline Tracking" loading="lazy" />
+            <img decoding="async" width="800" height="277" src="images/thumbs/ghl/GHL_Meta_Ads_Offline_Tracking.webp" alt="GHL Meta Offline Tracking" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Meta Ads Offline Tracking</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/Meta_Ads_Offline_Conversion_Tracking.webp" data-caption="GHL – Meta Offline Conversion Setup">
-            <img src="images/ghl/Meta_Ads_Offline_Conversion_Tracking.webp" alt="Meta Offline Conversion" loading="lazy" />
+            <img decoding="async" width="800" height="239" src="images/thumbs/ghl/Meta_Ads_Offline_Conversion_Tracking.webp" alt="Meta Offline Conversion" loading="lazy" />
             <div class="overlay"><span class="overlay-label">Meta Offline Conversion Setup</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item" onclick="openLightbox(this)" data-src="images/ghl/A2P_Verification.webp" data-caption="GHL – A2P 10DLC Verification">
-            <img src="images/ghl/A2P_Verification.webp" alt="A2P Verification" loading="lazy" />
+            <img decoding="async" width="800" height="410" src="images/thumbs/ghl/A2P_Verification.webp" alt="A2P Verification" loading="lazy" />
             <div class="overlay"><span class="overlay-label">A2P 10DLC Verification</span></div>
             <div class="overlay-icon"><svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zM9.5 13.5l2.5 3.01L15.5 12l4.5 6H4z"/></svg></div>
           </div>
           <div class="portfolio-item">
-            <video src="images/ghl/GoHighLevel-Calender-Form-Prepolutation.mp4" controls muted playsinline style="width:100%;display:block;border-radius:var(--radius);"></video>
+            <video preload="none" poster="images/thumbs/posters/GoHighLevel-Calender-Form-Prepolutation.webp" src="images/ghl/GoHighLevel-Calender-Form-Prepolutation.mp4" controls muted playsinline style="width:100%;display:block;border-radius:var(--radius);"></video>
             <div class="overlay"><span class="overlay-label">Calendar Form Pre-population</span></div>
           </div>
           <div class="portfolio-item">
-            <video src="images/ghl/GoHighLevel-Inbound_Webhook_Workflow.mp4" controls muted playsinline style="width:100%;display:block;border-radius:var(--radius);"></video>
+            <video preload="none" poster="images/thumbs/posters/GoHighLevel-Inbound_Webhook_Workflow.webp" src="images/ghl/GoHighLevel-Inbound_Webhook_Workflow.mp4" controls muted playsinline style="width:100%;display:block;border-radius:var(--radius);"></video>
             <div class="overlay"><span class="overlay-label">Inbound Webhook Workflow</span></div>
           </div>
         </div>
@@ -1129,21 +1139,21 @@ footer {
     <div class="ai-flow">
       <div class="ai-flow-card" onclick="openLightbox(this)" data-src="images/ai-conversations/AI_Conversation_1_Qualifying.png" data-caption="AI Follow-Up – Initial Outreach & Qualifying">
         <div class="ai-flow-tag"><span class="step-num">1</span> AI Reaches Out &amp; Qualifies</div>
-        <img src="images/ai-conversations/AI_Conversation_1_Qualifying.png" alt="AI conversation qualifying a lead" loading="lazy" />
+        <img decoding="async" width="720" height="1017" src="images/thumbs/ai-conversations/AI_Conversation_1_Qualifying.webp" alt="AI conversation qualifying a lead" loading="lazy" />
       </div>
       <div class="ai-flow-arrow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </div>
       <div class="ai-flow-card" onclick="openLightbox(this)" data-src="images/ai-conversations/AI_Conversation_2_Booking.png" data-caption="AI Follow-Up – Handling Objections & Booking">
         <div class="ai-flow-tag"><span class="step-num">2</span> AI Handles Objections &amp; Books</div>
-        <img src="images/ai-conversations/AI_Conversation_2_Booking.png" alt="AI conversation booking an appointment" loading="lazy" />
+        <img decoding="async" width="720" height="1029" src="images/thumbs/ai-conversations/AI_Conversation_2_Booking.webp" alt="AI conversation booking an appointment" loading="lazy" />
       </div>
       <div class="ai-flow-arrow">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </div>
       <div class="ai-flow-card" onclick="openLightbox(this)" data-src="images/ai-conversations/AI_Conversation_3_Confirmed.png" data-caption="AI Follow-Up – Appointment Confirmed">
         <div class="ai-flow-tag"><span class="step-num">3</span> Appointment Confirmed</div>
-        <img src="images/ai-conversations/AI_Conversation_3_Confirmed.png" alt="AI conversation confirming a booked appointment" loading="lazy" />
+        <img decoding="async" width="720" height="1045" src="images/thumbs/ai-conversations/AI_Conversation_3_Confirmed.webp" alt="AI conversation confirming a booked appointment" loading="lazy" />
       </div>
     </div>
 
@@ -1173,7 +1183,7 @@ footer {
 
     <div class="proof-grid">
       <div class="proof-card" onclick="openLightbox(this)" data-src="images/results/Meta_Ads_Leads_to_Appointment_Ratio.png" data-caption="Meta Ads Dashboard – Leads to Appointment Ratio">
-        <img src="images/results/Meta_Ads_Leads_to_Appointment_Ratio.png" alt="Meta Ads dashboard showing leads to appointment ratio" loading="lazy" />
+        <img decoding="async" width="1200" height="354" src="images/thumbs/results/Meta_Ads_Leads_to_Appointment_Ratio.webp" alt="Meta Ads dashboard showing leads to appointment ratio" loading="lazy" />
         <div class="proof-highlight">
           <div><div class="num">33.3%</div><div class="lbl">Leads to Appointment Ratio</div></div>
           <div><div class="num">$32.54</div><div class="lbl">Cost per Appointment</div></div>
@@ -1181,7 +1191,7 @@ footer {
         </div>
       </div>
       <div class="proof-card" onclick="openLightbox(this)" data-src="images/results/Google_Ads_Campaign_Conversions_Funnel.webp" data-caption="Google Ads Dashboard – Full Funnel to Closed Won">
-        <img src="images/results/Google_Ads_Campaign_Conversions_Funnel.webp" alt="Google Ads dashboard showing conversion funnel from leads to closed won" loading="lazy" />
+        <img decoding="async" width="1200" height="415" src="images/thumbs/results/Google_Ads_Campaign_Conversions_Funnel.webp" alt="Google Ads dashboard showing conversion funnel from leads to closed won" loading="lazy" />
         <div class="proof-highlight">
           <div><div class="num">49.97</div><div class="lbl">New Leads</div></div>
           <div><div class="num">11.65</div><div class="lbl">Sales Qualified Leads</div></div>
@@ -1206,82 +1216,82 @@ footer {
 
     <div class="funnel-grid" id="grid-funnels">
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Sea_Kayaking_Club.webp','Sea Kayaking Club')">
-        <img class="thumb" src="images/landing-pages/Sea_Kayaking_Club.webp" alt="Sea Kayaking Club" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Sea_Kayaking_Club.webp" alt="Sea Kayaking Club" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Sea Kayaking Club</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Senior_Care_Landing_Page.webp','Senior Care')">
-        <img class="thumb" src="images/landing-pages/Senior_Care_Landing_Page.webp" alt="Senior Care" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Senior_Care_Landing_Page.webp" alt="Senior Care" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Senior Care</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Kitchen_Remodeling.webp','Kitchen Remodeling')">
-        <img class="thumb" src="images/landing-pages/Kitchen_Remodeling.webp" alt="Kitchen Remodeling" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Kitchen_Remodeling.webp" alt="Kitchen Remodeling" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Kitchen Remodeling</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Mother_Performance_Clinic_Funnel.webp','Mother Performance Clinic')">
-        <img class="thumb" src="images/landing-pages/Mother_Performance_Clinic_Funnel.webp" alt="Mother Performance Clinic" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Mother_Performance_Clinic_Funnel.webp" alt="Mother Performance Clinic" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Mother Performance Clinic</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Motherhood_Landing_Page.webp','Motherhood Landing Page')">
-        <img class="thumb" src="images/landing-pages/Motherhood_Landing_Page.webp" alt="Motherhood Landing Page" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Motherhood_Landing_Page.webp" alt="Motherhood Landing Page" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Motherhood Landing Page</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Painitng_Landing_Page_For_FB_Ads.webp','Painting Service')">
-        <img class="thumb" src="images/landing-pages/Painitng_Landing_Page_For_FB_Ads.webp" alt="Painting Service" loading="lazy" />
+        <img decoding="async" width="600" height="711" class="thumb" src="images/thumbs/landing-pages/Painitng_Landing_Page_For_FB_Ads.webp" alt="Painting Service" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Painting Service</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Premarital_Couple_Health_and_Beauty_Funnel.webp','Health &amp; Beauty Funnel')">
-        <img class="thumb" src="images/landing-pages/Premarital_Couple_Health_and_Beauty_Funnel.webp" alt="Health and Beauty Funnel" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Premarital_Couple_Health_and_Beauty_Funnel.webp" alt="Health and Beauty Funnel" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Health &amp; Beauty Funnel</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Financial_Coach.webp','Financial Coach')">
-        <img class="thumb" src="images/landing-pages/Financial_Coach.webp" alt="Financial Coach" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Financial_Coach.webp" alt="Financial Coach" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Financial Coach</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Recruitement_Funnel.webp','Recruitment Funnel')">
-        <img class="thumb" src="images/landing-pages/Recruitement_Funnel.webp" alt="Recruitment Funnel" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Recruitement_Funnel.webp" alt="Recruitment Funnel" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Recruitment Funnel</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/AI_and_Marketing_Funnel.webp','AI &amp; Marketing Funnel')">
-        <img class="thumb" src="images/landing-pages/AI_and_Marketing_Funnel.webp" alt="AI Marketing Funnel" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/AI_and_Marketing_Funnel.webp" alt="AI Marketing Funnel" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">AI &amp; Marketing Funnel</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Aesthetic_Clinic_Landing_Page.webp','Aesthetic Clinic')">
-        <img class="thumb" src="images/landing-pages/Aesthetic_Clinic_Landing_Page.webp" alt="Aesthetic Clinic" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Aesthetic_Clinic_Landing_Page.webp" alt="Aesthetic Clinic" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Aesthetic Clinic</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Business_Funding.webp','Business Funding')">
-        <img class="thumb" src="images/landing-pages/Business_Funding.webp" alt="Business Funding" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Business_Funding.webp" alt="Business Funding" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Business Funding</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Car_wash_website.webp','Car Wash Website')">
-        <img class="thumb" src="images/landing-pages/Car_wash_website.webp" alt="Car Wash" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Car_wash_website.webp" alt="Car Wash" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Car Wash Website</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Tax_Coach.webp','Tax Business Coach')">
-        <img class="thumb" src="images/landing-pages/Tax_Coach.webp" alt="Tax Coach" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Tax_Coach.webp" alt="Tax Coach" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Tax Business Coach</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Landing_page.webp','Landing Page')">
-        <img class="thumb" src="images/landing-pages/Landing_page.webp" alt="Landing Page" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Landing_page.webp" alt="Landing Page" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Landing Page</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
       <div class="funnel-card" onclick="openPageViewer('images/landing-pages/Landing_page_2.webp','Landing Page 2')">
-        <img class="thumb" src="images/landing-pages/Landing_page_2.webp" alt="Landing Page 2" loading="lazy" />
+        <img decoding="async" width="600" height="933" class="thumb" src="images/thumbs/landing-pages/Landing_page_2.webp" alt="Landing Page 2" loading="lazy" />
         <div class="funnel-expand"><svg viewBox="0 0 24 24"><path d="M3 3h7v2H5v5H3V3zm11 0h7v7h-2V5h-5V3zM3 14h2v5h5v2H3v-7zm16 5h-5v2h7v-7h-2v5z"/></svg></div>
         <div class="funnel-info"><div class="funnel-name">Landing Page 2</div><div class="funnel-hint">Click to view full page ↓</div></div>
       </div>
@@ -1298,46 +1308,46 @@ footer {
 
     <div class="creatives-masonry" id="grid-creatives" data-gallery="creatives" style="margin-top: 40px;" data-animate data-delay="2">
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_1.jpg" data-caption="Beauty & Aesthetics Ad Creative">
-        <img src="images/creatives/new_creative_1.jpg" alt="Beauty Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/new_creative_1.webp" alt="Beauty Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_2.jpg" data-caption="Date Night Ad Creative">
-        <img src="images/creatives/new_creative_2.jpg" alt="Date Night Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="796" src="images/thumbs/creatives/new_creative_2.webp" alt="Date Night Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/AC_1.webp" data-caption="Ad Creative">
-        <img src="images/creatives/AC_1.webp" alt="Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/AC_1.webp" alt="Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_3.jpg" data-caption="Luxury Beauty Portrait Ad Creative">
-        <img src="images/creatives/new_creative_3.jpg" alt="Luxury Beauty Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="804" src="images/thumbs/creatives/new_creative_3.webp" alt="Luxury Beauty Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_8.jpg" data-caption="Ad Creative">
-        <img src="images/creatives/new_creative_8.jpg" alt="Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="750" src="images/thumbs/creatives/new_creative_8.webp" alt="Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_9.jpg" data-caption="Ad Creative">
-        <img src="images/creatives/new_creative_9.jpg" alt="Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/new_creative_9.webp" alt="Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/Celebrity.webp" data-caption="Celebrity Ad Creative">
-        <img src="images/creatives/Celebrity.webp" alt="Celebrity Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/Celebrity.webp" alt="Celebrity Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_4.jpg" data-caption="Infographic Ad Creative">
-        <img src="images/creatives/new_creative_4.jpg" alt="Infographic Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="804" src="images/thumbs/creatives/new_creative_4.webp" alt="Infographic Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_6.jpg" data-caption="Breaking News Style Ad Creative">
-        <img src="images/creatives/new_creative_6.jpg" alt="Breaking News Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="800" src="images/thumbs/creatives/new_creative_6.webp" alt="Breaking News Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_10.jpg" data-caption="Ad Creative">
-        <img src="images/creatives/new_creative_10.jpg" alt="Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/new_creative_10.webp" alt="Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/AC_2.webp" data-caption="Ad Creative">
-        <img src="images/creatives/AC_2.webp" alt="Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/AC_2.webp" alt="Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_5.jpg" data-caption="High-End Beauty Campaign Ad Creative">
-        <img src="images/creatives/new_creative_5.jpg" alt="Beauty Campaign Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="804" src="images/thumbs/creatives/new_creative_5.webp" alt="Beauty Campaign Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_7.jpg" data-caption="BOFU Ad Creative">
-        <img src="images/creatives/new_creative_7.jpg" alt="BOFU Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="800" src="images/thumbs/creatives/new_creative_7.webp" alt="BOFU Ad Creative" loading="lazy" />
       </div>
       <div class="creative-item" onclick="openLightbox(this)" data-src="images/creatives/new_creative_11.jpg" data-caption="Ad Creative">
-        <img src="images/creatives/new_creative_11.jpg" alt="Ad Creative" loading="lazy" />
+        <img decoding="async" width="600" height="600" src="images/thumbs/creatives/new_creative_11.webp" alt="Ad Creative" loading="lazy" />
       </div>
     </div>
   </div>
@@ -1352,31 +1362,25 @@ footer {
 
     <div class="videos-grid" style="margin-top: 40px;">
       <div class="video-card">
-        <video src="images/videos/adam-de-jong-nonas-home-care-testimonial.mp4" controls muted playsinline preload="metadata" style="width:100%;aspect-ratio:16/9;display:block;"></video>
+        <video preload="none" poster="images/thumbs/posters/adam-de-jong-nonas-home-care-testimonial.webp" src="images/videos/adam-de-jong-nonas-home-care-testimonial.mp4" controls muted playsinline style="width:100%;aspect-ratio:16/9;display:block;"></video>
       </div>
       <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/4GBA1OkSmn4"
-          title="Campaign Walkthrough 1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy">
-        </iframe>
+        <button type="button" class="yt-facade" data-yt="4GBA1OkSmn4" aria-label="Play: Campaign Walkthrough 1" onclick="loadYouTube(this)">
+          <img src="https://i.ytimg.com/vi/4GBA1OkSmn4/hqdefault.jpg" alt="Campaign Walkthrough 1" loading="lazy" decoding="async" width="480" height="360" />
+          <span class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.3.3 34 .3 34 .3s-21.3 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.7 47.7 34 47.7 34 47.7s21.3 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </button>
       </div>
       <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/noqHX7gtcl0"
-          title="Campaign Walkthrough 2"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy">
-        </iframe>
+        <button type="button" class="yt-facade" data-yt="noqHX7gtcl0" aria-label="Play: Campaign Walkthrough 2" onclick="loadYouTube(this)">
+          <img src="https://i.ytimg.com/vi/noqHX7gtcl0/hqdefault.jpg" alt="Campaign Walkthrough 2" loading="lazy" decoding="async" width="480" height="360" />
+          <span class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.3.3 34 .3 34 .3s-21.3 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.7 47.7 34 47.7 34 47.7s21.3 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </button>
       </div>
       <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/rAwUN5JaRxM"
-          title="Short Clip"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen loading="lazy">
-        </iframe>
+        <button type="button" class="yt-facade" data-yt="rAwUN5JaRxM" aria-label="Play: Short Clip" onclick="loadYouTube(this)">
+          <img src="https://i.ytimg.com/vi/rAwUN5JaRxM/hqdefault.jpg" alt="Short Clip" loading="lazy" decoding="async" width="480" height="360" />
+          <span class="yt-play"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.3.3 34 .3 34 .3s-21.3 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.7 47.7 34 47.7 34 47.7s21.3 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg></span>
+        </button>
       </div>
     </div>
   </div>
@@ -1395,7 +1399,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy is a talented paid search expert, he has been helping me set up, maintain and optimize my Google Ads account. He has shown good initiative and strong communication skills. He is also very reliable and has a high amount of integrity. I highly recommend him to anyone looking for a solid Google Ads manager."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/Point_22.webp" alt="Anwar Hasen" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/Point_22.webp" alt="Anwar Hasen" loading="lazy" />
           <div>
             <div class="author-name">Anwar Hasen</div>
             <div class="author-role">Point 22 · Marketing Agency</div>
@@ -1407,7 +1411,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy has been an indispensable asset to my business, expertly managing our Meta and Google Ads campaigns while seamlessly handling all backend operations on GoHighLevel. His strategic approach and technical expertise have significantly enhanced our advertising performance, making a tangible impact on our growth and success."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/Mustard_Growth.webp" alt="Aaron DeBenedetto" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/Mustard_Growth.webp" alt="Aaron DeBenedetto" loading="lazy" />
           <div>
             <div class="author-name">Aaron DeBenedetto</div>
             <div class="author-role">Mustard Growth Marketing</div>
@@ -1419,7 +1423,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"This guy is the best! I highly recommend him for anything related to GHL, Google Ads and Facebook Ads. I've never hired someone for work like this before but I was beyond impressed with his cooperation and knowledge! I look forward to many projects with him."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/Ultimate_Shield.webp" alt="Cobin Heiland" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/Ultimate_Shield.webp" alt="Cobin Heiland" loading="lazy" />
           <div>
             <div class="author-name">Cobin Heiland</div>
             <div class="author-role">Ultimate Shield · Marketing Agency</div>
@@ -1431,7 +1435,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy truly impressed me with his intuitive understanding of how to build a successful paid campaign. He took the time to analyze our broader strategic objectives before jumping in, always offering his professional insights where he thought something could be improved. He then nurtured the new campaign hour by hour in its first week to ensure the highest ROI."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/karimah.webp" alt="Karimah Whitaker" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/karimah.webp" alt="Karimah Whitaker" loading="lazy" />
           <div>
             <div class="author-name">Karimah Whitaker</div>
             <div class="author-role">Gelcom · Marketing Agency</div>
@@ -1443,7 +1447,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy is not only extremely talented and professional but he has exceeded both expectations and duties for every job he's worked on for us. Mrinmoy truly goes the extra mile to ensure success. I will be using Mrinmoy for many new projects in the near future. I highly recommend Mrinmoy as a very competent and professional resource for your project."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/Orlando_Las_Vegas.webp" alt="Jeffrey Nahom" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/Orlando_Las_Vegas.webp" alt="Jeffrey Nahom" loading="lazy" />
           <div>
             <div class="author-name">Jeffrey Nahom</div>
             <div class="author-role">Orlando Las Vegas · Tourism</div>
@@ -1455,7 +1459,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy is an exceptional talent and a very hard worker. Mrinmoy helped us optimize our GHL account and created a variety of automations for us as well! Great work! Highly recommend!"</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/Brand_Clinic.webp" alt="Anthony El Chibani" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/Brand_Clinic.webp" alt="Anthony El Chibani" loading="lazy" />
           <div>
             <div class="author-name">Anthony El Chibani</div>
             <div class="author-role">Brand Clinic · Marketing Agency</div>
@@ -1467,7 +1471,7 @@ footer {
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <p class="testimonial-text">"Mrinmoy did an exceptional job helping us create several Google Ads, Google Tag Manager, and Google Analytics accounts from scratch. His expertise was evident from the beginning, and he guided us through the setup process with ease."</p>
         <div class="testimonial-author">
-          <img class="author-avatar" src="images/testimonials/Life_in_Motion.webp" alt="Heather Frigaard" />
+          <img decoding="async" width="200" height="200" class="author-avatar" src="images/testimonials/Life_in_Motion.webp" alt="Heather Frigaard" loading="lazy" />
           <div>
             <div class="author-name">Heather Frigaard</div>
             <div class="author-role">Life in Motion</div>
@@ -1496,7 +1500,7 @@ footer {
   <div class="container">
     <div class="about-inner">
       <div class="about-img-wrap">
-        <img src="images/mrinmoy_profile.webp" alt="Mrinmoy Sadiq" loading="lazy" />
+        <img decoding="async" width="800" height="800" src="images/mrinmoy_profile.webp" alt="Mrinmoy Sadiq" loading="lazy" />
         <div class="about-badge">5+ Years Experience</div>
       </div>
       <div class="about-text">
@@ -1530,63 +1534,63 @@ footer {
     <p class="section-sub" data-animate data-delay="2">From ad platforms to CRM automations and analytics, I use best-in-class tools to build, track, and scale every client acquisition system.</p>
     <div class="tools-grid">
       <div class="tool-card" data-animate>
-        <img src="images/tools/FB_Ads.webp" alt="Meta Ads" />
+        <img decoding="async" width="132" height="132" src="images/tools/FB_Ads.webp" alt="Meta Ads" loading="lazy" />
         <div class="tool-name">Meta / Facebook Ads</div>
       </div>
       <div class="tool-card" data-animate data-delay="1">
-        <img src="images/tools/GHL.webp" alt="GoHighLevel" />
+        <img decoding="async" width="236" height="132" src="images/tools/GHL.webp" alt="GoHighLevel" loading="lazy" />
         <div class="tool-name">GoHighLevel</div>
       </div>
       <div class="tool-card" data-animate data-delay="2">
-        <img src="images/tools/Google_Analytics.webp" alt="Google Analytics" />
+        <img decoding="async" width="383" height="132" src="images/tools/Google_Analytics.webp" alt="Google Analytics" loading="lazy" />
         <div class="tool-name">Google Analytics 4</div>
       </div>
       <div class="tool-card" data-animate data-delay="3">
-        <img src="images/tools/Tag_manager_logo.webp" alt="Google Tag Manager" />
+        <img decoding="async" width="227" height="132" src="images/tools/Tag_manager_logo.webp" alt="Google Tag Manager" loading="lazy" />
         <div class="tool-name">Google Tag Manager</div>
       </div>
       <div class="tool-card" data-animate data-delay="4">
-        <img src="images/tools/Google-Looker-Studio-Logo-Square-Insight-Platforms.webp" alt="Looker Studio" />
+        <img decoding="async" width="132" height="132" src="images/tools/Google-Looker-Studio-Logo-Square-Insight-Platforms.webp" alt="Looker Studio" loading="lazy" />
         <div class="tool-name">Looker Studio</div>
       </div>
       <div class="tool-card" data-animate>
-        <img src="images/tools/Meta_Conversion_API.webp" alt="Meta Conversion API" />
+        <img decoding="async" width="276" height="132" src="images/tools/Meta_Conversion_API.webp" alt="Meta Conversion API" loading="lazy" />
         <div class="tool-name">Meta Conversion API</div>
       </div>
       <div class="tool-card" data-animate data-delay="1">
-        <img src="images/tools/Clickfunnel.webp" alt="ClickFunnels" />
+        <img decoding="async" width="235" height="132" src="images/tools/Clickfunnel.webp" alt="ClickFunnels" loading="lazy" />
         <div class="tool-name">ClickFunnels</div>
       </div>
       <div class="tool-card" data-animate data-delay="2">
-        <img src="images/tools/Systeme.io.webp" alt="Systeme.io" />
+        <img decoding="async" width="264" height="132" src="images/tools/Systeme.io.webp" alt="Systeme.io" loading="lazy" />
         <div class="tool-name">Systeme.io</div>
       </div>
       <div class="tool-card" data-animate data-delay="3">
-        <img src="images/tools/WordPress.webp" alt="WordPress" />
+        <img decoding="async" width="244" height="132" src="images/tools/WordPress.webp" alt="WordPress" loading="lazy" />
         <div class="tool-name">WordPress</div>
       </div>
       <div class="tool-card" data-animate data-delay="4">
-        <img src="images/tools/HubSpot.webp" alt="HubSpot" />
+        <img decoding="async" width="451" height="132" src="images/tools/HubSpot.webp" alt="HubSpot" loading="lazy" />
         <div class="tool-name">HubSpot</div>
       </div>
       <div class="tool-card" data-animate>
-        <img src="images/tools/Zappier.webp" alt="Zapier" />
+        <img decoding="async" width="288" height="132" src="images/tools/Zappier.webp" alt="Zapier" loading="lazy" />
         <div class="tool-name">Zapier</div>
       </div>
       <div class="tool-card" data-animate data-delay="1">
-        <img src="images/tools/callrail-CTA.webp" alt="CallRail" />
+        <img decoding="async" width="132" height="132" src="images/tools/callrail-CTA.webp" alt="CallRail" loading="lazy" />
         <div class="tool-name">CallRail</div>
       </div>
       <div class="tool-card" data-animate data-delay="2">
-        <img src="images/tools/Microsoft_Clarity.webp" alt="Microsoft Clarity" />
+        <img decoding="async" width="264" height="132" src="images/tools/Microsoft_Clarity.webp" alt="Microsoft Clarity" loading="lazy" />
         <div class="tool-name">Microsoft Clarity</div>
       </div>
       <div class="tool-card" data-animate data-delay="3">
-        <img src="images/tools/Hotjar.svg" alt="Hotjar" />
+        <img decoding="async" src="images/tools/Hotjar.svg" alt="Hotjar" loading="lazy" />
         <div class="tool-name">Hotjar</div>
       </div>
       <div class="tool-card" data-animate data-delay="4">
-        <img src="images/tools/unbounce.svg" alt="Unbounce" />
+        <img decoding="async" src="images/tools/unbounce.svg" alt="Unbounce" loading="lazy" />
         <div class="tool-name">Unbounce</div>
       </div>
     </div>
@@ -1728,6 +1732,16 @@ document.getElementById('lightbox').addEventListener('touchend', e => {
   const dx = e.changedTouches[0].screenX - touchStartX;
   if (Math.abs(dx) > 50) lightboxNav(dx < 0 ? 1 : -1);
 }, { passive: true });
+
+// ── YouTube (load the player only when clicked) ─────
+function loadYouTube(btn) {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/' + btn.dataset.yt + '?autoplay=1';
+  iframe.title = btn.getAttribute('aria-label').replace(/^Play: /, '');
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  btn.replaceWith(iframe);
+}
 
 // ── Scroll gallery (mobile arrows) ──────────────────
 function scrollGallery(id, dir) {
